@@ -1,0 +1,100 @@
+#+STARTUP: indent align hidestars
+#+TITLE: OMG YEY
+
+* OMG!                                                               :smiley:
+- https://orgmode.org/manual/In_002dbuffer-Settings.html
+- https://orgmode.org/manual/Publishing-links.html#Publishing-links
+- Customize the variable org-id-link-to-org-use-id and set it to t (AKA Create ID to make link)
+
+* TODO Template Publicación
+:PROPERTIES:
+:ID:       ce948347-c8bd-42c2-8baf-06e236b31d6e
+:END:
+
+- Un directorio por <<TEMA>>
+- Cada headline con un identificador [[file:foo.org::#custom-id]]
+- Con deft https://jblevins.org/projects/deft/ buscar dentro de las carpeta del proyecto los temas asociados y copiar el ID
+  - Copiar el link con org-id-copy
+
+* AAAA
+
+** Initial Problem
+The elements wrapping the headline content were not contained inside a parent div/section, making it pretty hard to organize the content in the page since they kept overlapping each other using grid and flexbox was impossible due to them not having a parent html element.
+The TOC needed to grow in size in relation to the content of the page. The logical solution would be to use flexbox but since we already discarded that as an option I wah stuck with traditional "box" manipulation or css grid.
+
+#+BEGIN_EXAMPLE
++-------+--------------+
+|       |    header    |
+|       +--------------+
+|       |  headline-1  |
+|  toc  |  headline-2  |
+|       |     ....     |
+|       |              |
+|       |  headline-N  |
++-------+--------------+
+|        footer        |
++----------------------+
+#+END_EXAMPLE
+
+** The Solution
+The template needs to have three rows and two columns but the content at [1][1] is forced into position so we don't need to reference it by name. 
+
+#+BEGIN_SRC css
+#content {
+    display: inline-grid;
+    grid-template-areas: 'toc header'
+        'toc _'
+        'toc footer';
+}
+#+END_SRC
+
+The header is positioned using the grid-area name
+
+#+BEGIN_SRC css
+header {
+    grid-area: header;
+    width: auto;
+} /* document title */
+#+END_SRC
+
+The content within the headlines in the org file has to be forced into position with the =grid-column= attribute and since the amount of headlines that each page has is variable we need to use the grid-row attribute and set it to "auto".
+
+#+BEGIN_SRC css
+[class^="outline-"] {
+    grid-row: auto;
+    grid-column: 2;
+}
+#+END_SRC
+
+The TOC can be positioned in the traditional way but the bottom of it should reach the footer section which can be done by manipulating the grid-row-end attribut and setting it to an absurdly high number.
+
+#+BEGIN_SRC css
+#table-of-contents {
+    grid-area: toc;
+    grid-row-end: 999;
+}
+#+END_SRC
+
+* Lalala
+askdjfhas
+asdfa
+dsfa
+dsfa
+dsf
+adsf
+asdf
+asdf
+asdfasdf
+asdf
+asdf
+asd
+fa
+dfsa
+aa
+asdf
+asdf
+asd
+fasd
+fasdf
+adsf
+asdf

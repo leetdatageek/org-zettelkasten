@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+#content {
+    display: inline-grid;
+    grid-template-areas: 'toc header'
+        'toc _'
+        'footer footer';
+}
+
+[class^="outline-"] {
+    grid-row: auto;
+    grid-column: 2;
+    background-color: white;
+    padding: 20px;
+}
+
+#table-of-contents {
+    background-color: #f1f1f1;
+    padding: 20px;
+    grid-area: toc;
+    grid-row-end: 999;
+}
+
+#table-of-contents ul li {
+    list-style-type: none;
+}
+
+#postamble {
+    margin: 0;
+    grid-area: footer;
+    background-color: black;
+    height: 100px;
+}
+
+#postamble * {
+    color: white;
+    margin: 0;
+}
+
+p.author {
+} /* author information, including email */
+p.date {
+} /* publishing date */
+p.creator {} /* creator info, about org mode version */
+header {
+    grid-area: header;
+    padding: 60px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+    width: auto;
+} /* document title */
+.subtitle {} /* document subtitle */
+.todo {
+    background-color: #000000;
+} /* TODO keywords, all not-done states */
+.done {} /* the DONE keywords, all states that count as done */
+.WAITING {} /* each TODO keyword also uses a class named after itself */
+.timestamp {} /* timestamp */
+.timestamp-kwd {} /* keyword associated with a timestamp, like ‘SCHEDULED’ */
+.timestamp-wrapper {} /* span around keyword plus timestamp */
+.tag {} /* tag in a headline */
+._HOME {} /* each tag uses itself as a class, “@” replaced by “_” */
+.target {} /* target for links */
+.linenr {} /* the line number in a code example */
+.code-highlighted {} /* for highlighting referenced code lines */
+div.outline-N {} /* div for outline level N (headline plus text) */
+div.outline-text-N {} /* extra div for text at outline level N */
+.section-number-N {} /* section number in headlines, different for each level */
+.figure-number {} /* label like “Figure 1:” */
+.table-number {} /* label like “Table 1:” */
+.listing-number {} /* label like “Listing 1:” */
+div.figure {} /* how to format an in-lined image */
+pre.src {} /* formatted source code */
+pre.example {} /* normal example */
+p.verse {} /* verse paragraph */
+div.footnotes {} /* footnote section headline */
+p.footnote {} /* footnote definition paragraph, containing a footnote */
+.footref {} /* a footnote reference number (always a <sup>) */
+.footnum {} /* footnote number in footnote definition (always <sup>) */
+.org-svg {} /* default class for a linked ‘.svg’ image */
