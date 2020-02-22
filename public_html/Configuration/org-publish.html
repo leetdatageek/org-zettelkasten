@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-02-21 vie. 23:42 -->
+<!-- 2020-02-22 sáb. 02:29 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OMG YEY</title>
@@ -136,11 +136,11 @@ The template needs to have three rows and two columns but the content at [1][1] 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css">#content {
-    display: inline-grid;
-    grid-template-areas: 'toc header'
-        'toc _'
-        'toc footer';
+<pre class="src src-css"><span style="color: #61AFEF;">#content </span>{
+    <span style="color: #C678DD;">display</span>: inline-grid;
+    <span style="color: #C678DD;">grid-template-areas</span>: <span style="color: #98C379;">'toc header'</span>
+        <span style="color: #98C379;">'toc _'</span>
+        <span style="color: #98C379;">'toc footer'</span>;
 }
 </pre>
 </div>
@@ -150,10 +150,45 @@ The header is positioned using the grid-area name
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css">header {
-    grid-area: header;
-    width: auto;
-} /* document title */
+<pre class="src src-css"><span style="color: #61AFEF;">header </span>{
+    <span style="color: #C678DD;">grid-area</span>: header;
+    <span style="color: #C678DD;">width</span>: auto;
+} <span style="color: #5C6370; font-style: italic;">/* </span><span style="color: #5C6370; font-style: italic;">document title </span><span style="color: #5C6370; font-style: italic;">*/</span>
+</pre>
+</div>
+
+<p>
+The content within the headlines in the org file has to be forced into position with the <code>grid-column</code> attribute and since the amount of headlines that each page has is variable we need to use the grid-row attribute and set it to "auto".
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #61AFEF;">[class^=</span><span style="color: #98C379;">"outline-"</span><span style="color: #61AFEF;">] </span>{
+    <span style="color: #C678DD;">grid-row</span>: auto;
+    <span style="color: #C678DD;">grid-column</span>: 2;
+}
+</pre>
+</div>
+
+<p>
+The TOC can be positioned in the traditional way but the bottom of it should reach the footer section which can be done by manipulating the grid-row-end attribut and setting it to an absurdly high number.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-css"><span style="color: #61AFEF;">#table-of-contents </span>{
+    <span style="color: #C678DD;">grid-area</span>: toc;
+    <span style="color: #C678DD;">grid-row-end</span>: 999;
+}
+</pre>
+</div>
+
+<p>
+The syntax highlighting capabilities are available once you install the htmlize package. <a href="https://stackoverflow.com/a/24087061">Link to StackOverflow answer</a>. 
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #C678DD;">use-package</span> <span style="color: #56B6C2;">htmlize</span>
+  <span style="color: #56B6C2;">:init</span>
+  <span style="color: #56B6C2;">:ensure</span> t)
 </pre>
 </div>
 </div>
@@ -191,7 +226,7 @@ asdf
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-02-21 vie. 23:42</p>
+<p class="date">Created: 2020-02-22 sáb. 02:29</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

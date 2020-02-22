@@ -1,9 +1,29 @@
+/*-----------------+
+| IMPORT THE FONTS |
++-----------------*/
+@import url('https://fonts.googleapis.com/css?family=Fira+Code|IBM+Plex+Sans|Merriweather&display=swap');
+
 * {
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
+    margin: 0 10%;
+    background-image: url('/img/fishnets-and-hearts.png');
+    background-repeat: repeat;
+}
+
+
+h1,h2,h3 {
+    font-family: 'Merriweather';
+}
+
+[class^="outline-"] > h2 {
+    padding: 3px;
+    color: black;
+    background: #EA709F;
+    margin: 15px 10px 0px -55px;
+    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 #content {
@@ -16,19 +36,42 @@ body {
 [class^="outline-"] {
     grid-row: auto;
     grid-column: 2;
-    background-color: white;
-    padding: 20px;
+    background-color: aliceblue;
+    padding: 0px 0 0 20px;
+    margin: 15px 15px 0px 15px;
+    
+}
+#content > [class^="outline"] {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+[class^="outline-"]:last-of-type {
+    margin: 15px 15px 15px 15px;
+}
+
+a {
+    color: #B3A732;
+}
+a:visited {
+    color: #57CBE6;
+}
+
+div [id^="text"] {
+    font-size: 1.2em;
+    font-family: 'IBM Plex Sans';
 }
 
 #table-of-contents {
-    background-color: #f1f1f1;
+    background-color: none;
     padding: 20px;
     grid-area: toc;
     grid-row-end: 999;
+    color: #999032;
 }
 
-#table-of-contents ul li {
+#table-of-contents ul li *{
     list-style-type: none;
+    color: #999032;
+    text-decoration: none;
 }
 
 #postamble {
@@ -52,7 +95,7 @@ header {
     grid-area: header;
     padding: 60px;
     text-align: center;
-    background: #1abc9c;
+    background: #2B8599;
     color: white;
     width: auto;
 } /* document title */
@@ -77,8 +120,19 @@ div.outline-text-N {} /* extra div for text at outline level N */
 .table-number {} /* label like “Table 1:” */
 .listing-number {} /* label like “Listing 1:” */
 div.figure {} /* how to format an in-lined image */
-pre.src {} /* formatted source code */
+
+
+pre.src {
+    font-family: 'Fira Code';
+    font-size: 0.781em;
+    color: white;
+    background-color: black;
+    width: auto;
+    padding: 10px;
+    border-radius: 5px;
+} /* formatted source code */
 pre.example {} /* normal example */
+
 p.verse {} /* verse paragraph */
 div.footnotes {} /* footnote section headline */
 p.footnote {} /* footnote definition paragraph, containing a footnote */

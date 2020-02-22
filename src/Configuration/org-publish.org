@@ -75,6 +75,14 @@ The TOC can be positioned in the traditional way but the bottom of it should rea
 }
 #+END_SRC
 
+The syntax highlighting capabilities are available once you install the htmlize package. [[https://stackoverflow.com/a/24087061][Link to StackOverflow answer]]. 
+
+#+BEGIN_SRC elisp
+(use-package htmlize
+  :init
+  :ensure t)
+#+END_SRC
+
 * Lalala
 askdjfhas
 asdfa
