@@ -19,11 +19,14 @@ h1,h2,h3 {
 }
 
 [class^="outline-"] > h2 {
-    padding: 3px;
+    padding: 0.5rem;
     color: #3E4980;
-    background: #C0DAE6;
-    margin: 10px 10px 0px -37px;
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 0;
+    text-shadow: 1px 1px #B38F82;
+}
+
+#content:first-child {
+    background: rgba(0, 0, 0, 0.5);
 }
 
 #content {
@@ -32,22 +35,23 @@ h1,h2,h3 {
         'toc _'
         'footer footer';
     width: 70%;
-    margin-left: 10%
+    margin-left: 10%;
 }
 
 [class^="outline-"] {
     grid-row: auto;
     grid-column: 2;
-    background-color: aliceblue;
-    padding: 0px 0 0 20px;
-    margin: 15px 2px 0px 15px;
+    background-color: white;
+    padding: 0 0rem 0 1rem;
+    margin: 1rem 1rem 0 0;
+    text-align: justify;
     
 }
 #content > [class^="outline"] {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 [class^="outline-"]:last-of-type {
-    margin: 15px 15px 15px 15px;
+    margin: 1rem 1rem 1rem 0;
 }
 
 a {
@@ -68,6 +72,7 @@ div [id^="text"] {
     grid-area: toc;
     grid-row-end: 999;
     color: #B38F82;
+    text-shadow: 2px 2px #000000;
 }
 
 #table-of-contents ul:first-child {
@@ -78,6 +83,7 @@ div [id^="text"] {
     list-style: none;
     text-decoration: none;
     list-style-type: none;
+    text-shadow: 2px 2px #000000;
 }
 
 #table-of-contents ul {
@@ -89,7 +95,6 @@ div [id^="text"] {
 #table-of-contents ul li a {
     text-decoration: none;
 }
-
 
 #postamble {
     margin: 0;
@@ -113,8 +118,10 @@ header {
     padding: 60px;
     text-align: center;
     background: #3E4980;
+    text-shadow: 2px 2px #000000;
     color: white;
     width: auto;
+    margin: 1rem 1rem 0 0;
 } /* document title */
 .subtitle {} /* document subtitle */
 .todo {
