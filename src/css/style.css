@@ -11,6 +11,7 @@ body {
     margin: 0 10%;
     background-image: url('/img/fishnets-and-hearts.png');
     background-repeat: repeat;
+    background-color: black;
 }
 
 
@@ -21,9 +22,7 @@ h1,h2,h3 {
 [class^="outline-"] > h2 {
     padding: 3px;
     color: #3E4980;
-    background: #C0DAE6;
-    margin: 10px 10px 0px -37px;
-    box-shadow: 0px 2px 3px 0px rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.2);
+    margin: 10px;
 }
 
 #content {
@@ -32,7 +31,8 @@ h1,h2,h3 {
         'toc _'
         'footer footer';
     width: 70%;
-    margin-left: 10%
+    margin-left: 10%;
+    background-color: rgba(0, 0, 0, 0.65);
 }
 
 [class^="outline-"] {
@@ -40,11 +40,12 @@ h1,h2,h3 {
     grid-column: 2;
     background-color: aliceblue;
     padding: 0px 0 0 20px;
-    margin: 15px 2px 0px 15px;
+    margin: 15px 15px 0px 15px;
     
 }
 #content > [class^="outline"] {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 0px;
 }
 [class^="outline-"]:last-of-type {
     margin: 15px 15px 15px 15px;
@@ -60,6 +61,8 @@ a:visited {
 div [id^="text"] {
     font-size: 1.2em;
     font-family: 'IBM Plex Sans';
+    margin: 0px;
+    padding: 0px;
 }
 
 #table-of-contents {
@@ -112,7 +115,8 @@ header {
     grid-area: header;
     padding: 60px;
     text-align: center;
-    background: #3E4980;
+    background: rgb(116,178,204);
+    background: linear-gradient(320deg, rgba(116,178,204,1) 0%, rgba(177,214,230,1) 100%);
     color: white;
     width: auto;
 } /* document title */
