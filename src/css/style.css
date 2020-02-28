@@ -8,7 +8,7 @@
 }
 
 body {
-    margin: 0 10%;
+    margin: 0;
     background-image: url('/img/fishnets-and-hearts.png');
     background-repeat: repeat;
 }
@@ -16,10 +16,11 @@ body {
 
 h1,h2,h3 {
     font-family: 'Merriweather';
+    padding: 0.5rem 0 0.5rem 0;
 }
 
 [class^="outline-"] > h2 {
-    padding: 0.5rem;
+    padding: 0 0 0.5rem 0;
     color: #3E4980;
     margin: 0;
     text-shadow: 1px 1px #B38F82;
@@ -31,27 +32,30 @@ h1,h2,h3 {
 
 #content {
     display: inline-grid;
-    grid-template-areas: 'toc header'
+    grid-template-areas: 'header header'
         'toc _'
         'footer footer';
-    width: 70%;
-    margin-left: 10%;
+    width: 70vw;
+    margin: 0 0 0 15vw;
 }
 
 [class^="outline-"] {
+    text-align: justify;
+}
+
+#content > [class^="outline"] {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     grid-row: auto;
     grid-column: 2;
     background-color: white;
-    padding: 0 0rem 0 1rem;
-    margin: 1rem 1rem 0 0;
+    margin: -2vh 15vw 2vh 0;
     text-align: justify;
-    
+    width: 55vw;
+    padding: 30px;
 }
-#content > [class^="outline"] {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+
 [class^="outline-"]:last-of-type {
-    margin: 1rem 1rem 1rem 0;
+    margin: -2vh 0 0 0;
 }
 
 a {
@@ -64,6 +68,7 @@ a:visited {
 div [id^="text"] {
     font-size: 1.2em;
     font-family: 'IBM Plex Sans';
+    margin: auto;
 }
 
 #table-of-contents {
@@ -73,6 +78,10 @@ div [id^="text"] {
     grid-row-end: 999;
     color: #B38F82;
     text-shadow: 2px 2px #000000;
+    width: 15vw;
+    background-color: white;
+    margin: -2vh 0vw 2vh 0;
+    text-align: justify;
 }
 
 #table-of-contents ul:first-child {
@@ -120,8 +129,8 @@ header {
     background: #3E4980;
     text-shadow: 2px 2px #000000;
     color: white;
-    width: auto;
-    margin: 1rem 1rem 0 0;
+    width: 100vw;
+    margin: 0 0 0 -15vw;
 } /* document title */
 .subtitle {} /* document subtitle */
 .todo {
