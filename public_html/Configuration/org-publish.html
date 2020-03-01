@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-03-01 dom. 04:16 -->
+<!-- 2020-03-01 dom. 16:13 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish Tips &amp; Tricks</title>
@@ -220,9 +220,8 @@ Unfortunately using the #+ATTR<sub>HTML</sub> tag would wrap the hyperlink in a 
 </p>
 
 <p>
-Once we set up a way for <a href='https://emacs.stackexchange.com/a/30598' rel='external nofollow'>capturing our templates in place</a> the next way is to set up the template using the inline html trick and <a href='https://orgmode.org/manual/Template-expansion.html#Template-expansion' rel='external nofollow'>template expansion</a>
+Once we set up a way for <a href='https://emacs.stackexchange.com/a/30598' rel='external nofollow'>capturing our templates in place</a> the next way is to set up the template using the inline html trick and <a href='https://orgmode.org/manual/Template-expansion.html#Template-expansion' rel='external nofollow'>template expansion</a> alongside <a href='https://orgmode.org/manual/Macro-Replacement.html' rel='external nofollow'>macro replacement</a>.
 </p>
-
 <div class="org-src-container">
 <pre class="src src-elisp"><span style="color: #5C6370; font-style: italic;">;; </span><span style="color: #5C6370; font-style: italic;">marcos are pre-processed... dah!</span>
 #+MACRO: a @@html:&lt;a href='$2' rel='external nofollow'&gt;$1&lt;/a&gt;@@
@@ -258,7 +257,7 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-03-01 dom. 04:16</p>
+<p class="date">Created: 2020-03-01 dom. 16:13</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

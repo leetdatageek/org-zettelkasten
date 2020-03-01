@@ -97,8 +97,7 @@ Linking to a website or piece of content would normally increase that website’
 
 Unfortunately using the #+ATTR_HTML tag would wrap the hyperlink in a <p> element, as it's described in {{{a(this old reddit thread,https://www.reddit.com/r/emacsorg/comments/5afnjy/emacs_org_html_export_attr_html_for_inline_tags/)}}} however in the org manual I found out that you can {{{a(quote HTML tags,https://orgmode.org/org.html#Quoting-HTML-tags)}}}
 
-Once we set up a way for {{{a(capturing our templates in place,https://emacs.stackexchange.com/a/30598)}}} the next way is to set up the template using the inline html trick and {{{a(template expansion,https://orgmode.org/manual/Template-expansion.html#Template-expansion)}}}
-
+Once we set up a way for {{{a(capturing our templates in place,https://emacs.stackexchange.com/a/30598)}}} the next way is to set up the template using the inline html trick and {{{a(template expansion,https://orgmode.org/manual/Template-expansion.html#Template-expansion)}}} alongside {{{a(macro replacement,https://orgmode.org/manual/Macro-Replacement.html)}}}.
 #+begin_src elisp
 ;; marcos are pre-processed... dah!
 #+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
