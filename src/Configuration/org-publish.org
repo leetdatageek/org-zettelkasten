@@ -1,5 +1,10 @@
 #+STARTUP: indent align hidestars
-#+TITLE: OMG YEY
+#+TITLE: org-publish Tips & Tricks
+#+DESCRIPTION: Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids.
+#+HTML_HEAD: <meta property="og:title" content="org-publish Tips & Tricks" />
+#+HTML_HEAD: <meta property="og:description" content="Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
 
 * OMG!                                                               :smiley:
 - https://orgmode.org/manual/In_002dbuffer-Settings.html
@@ -86,16 +91,18 @@ The syntax highlighting capabilities are available once you install the htmlize 
 * SEO Improvements
 ** Capturing links
 :PROPERTIES:
-:ID:       cedbb017-219b-486f-9433-2d8271aeb21d
+:ID:       837f22ed-efed-43db-bb24-d5f10d5b6f7c
 :END:
 Linking to a website or piece of content would normally increase that website’s domain authority. But with a nofollow tag, it won’t.
 
-We need to define a way of 
-#+ATTR_HTML: rel: nofollow 
-[[https://emacs.stackexchange.com/a/30598][capturing in place]]
-our hyperlinks
+Unfortunately using the #+ATTR_HTML tag would wrap the hyperlink in a <p> element, as it's described in {{{a(this old reddit thread,https://www.reddit.com/r/emacsorg/comments/5afnjy/emacs_org_html_export_attr_html_for_inline_tags/)}}} however in the org manual I found out that you can {{{a(quote HTML tags,https://orgmode.org/org.html#Quoting-HTML-tags)}}}
+
+Once we set up a way for {{{a(capturing our templates in place,https://emacs.stackexchange.com/a/30598)}}} the next way is to set up the template using the inline html trick and {{{a(template expansion,https://orgmode.org/manual/Template-expansion.html#Template-expansion)}}}
 
 #+begin_src elisp
+;; marcos are pre-processed... dah!
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
+
 (defun org-capture-at-point ()
   "Insert an org capture template at point."
   (interactive)
@@ -104,6 +111,15 @@ our hyperlinks
 (global-set-key (kbd "C-c c") #'org-capture-at-point)
 
 (setq org-capture-templates
-      '(("l" "Link nofollow" plain (file "")
-         "#+ATTR_HTML: rel: nofollow\n [[%x][%?]]")))
+      '(("l" "Link nofollow" plain (file "") "{{{a(%?,%x)}}}")))
 #+end_src
+
+Another crucial part is to set up the Open Graph Tags so your content gets shared in a beautiful way in social media.
+
+#+begin_src elisp
+#+HTML_HEAD: <meta property="og:title" content="Title" />
+#+HTML_HEAD: <meta property="og:description" content="My Site Description" />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+end_src
+
+{{{a(https://www.google.com, nah no te la puedo)}}}
