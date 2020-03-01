@@ -1,0 +1,30 @@
+#+STARTUP: indent align hidestars
+#+TITLE: AUTOMATION
+
+* Selenium & WebDriver configuration
+
+  If you want to work with automation - mainly in WSL or any other GNU/Linux system - you may not want to deal with a lot of windows popping up everywhere.
+
+  https://wiki.debian.org/Firefox
+  https://github.com/mozilla/geckodriver/releases (Supports Firefox version >= 60)
+  
+  #+begin_src shell
+  sudo apt-get install firefox-esr
+  wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  #+end_src
+
+  #+begin_src python
+  from selenium import webdriver
+  from selenium.webdriver.firefox.options import Options
+  import os
+  import time
+  
+  options = Options()
+  options.headless = True # Important for CLI work
+  driver = webdriver.Firefox(options=options)
+  driver.get("http://www.google.com")
+  time.sleep(1)
+  assert "google - Google Search" in driver.title
+  print(driver.title)
+  driver.quit()
+  #+end_src
