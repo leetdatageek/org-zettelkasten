@@ -1,4 +1,5 @@
 #+STARTUP: indent align hidestars
+#+DESCRIPTION: selenium webdriver python problems image processing threading configuration zettelkasten leetdatageek
 #+TITLE: AUTOMATION
 
 * Selenium & WebDriver configuration
@@ -11,7 +12,11 @@
   #+begin_src shell
   sudo apt-get install firefox-esr
   wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  tar -xvf geckodriver-v0.26.0-linux64.tar.gz
+  chmod +x geckodriver
   #+end_src
+
+  Copy the file to /bin or put the script in /usr/bin or in your custom folder and add it to the PATH environment variable.
 
   #+begin_src python
   from selenium import webdriver

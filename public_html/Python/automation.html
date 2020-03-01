@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-03-01 dom. 01:27 -->
+<!-- 2020-03-01 dom. 01:40 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AUTOMATION</title>
 <meta name="generator" content="Org mode">
+<meta name="description" content="selenium webdriver python problems image processing threading configuration zettelkasten leetdatageek"
+>
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
 /*
@@ -82,8 +84,14 @@ If you want to work with automation - mainly in WSL or any other GNU/Linux syste
 <div class="org-src-container">
 <pre class="src src-shell">sudo apt-get install firefox-esr
 wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+tar -xvf geckodriver-v0.26.0-linux64.tar.gz
+chmod +x geckodriver
 </pre>
 </div>
+
+<p>
+Copy the file to /bin or put the script in /usr/bin or in your custom folder and add it to the PATH environment variable.
+</p>
 
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #C678DD;">from</span> selenium <span style="color: #C678DD;">import</span> webdriver
@@ -105,7 +113,7 @@ driver.<span style="color: #56B6C2;">quit</span>()
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-03-01 dom. 01:27</p>
+<p class="date">Created: 2020-03-01 dom. 01:40</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
