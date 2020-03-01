@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-03-01 dom. 01:40 -->
+<!-- 2020-03-01 dom. 02:41 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>OMG YEY</title>
@@ -63,14 +63,18 @@ for the JavaScript code in this tag.
 <div id="text-table-of-contents">
 <ul>
 <li><a href="#org980a630">1. OMG!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="smiley">smiley</span></span></a></li>
-<li><a href="#orged669e6">2. <span class="todo TODO">TODO</span> Template Publicaci�n</a></li>
+<li><a href="#orged669e6">2. <span class="todo TODO">TODO</span> Template Publicación</a></li>
 <li><a href="#org67084b7">3. AAAA</a>
 <ul>
 <li><a href="#org0fa68b3">3.1. Initial Problem</a></li>
 <li><a href="#org0302c3e">3.2. The Solution</a></li>
 </ul>
 </li>
-<li><a href="#org0f8e341">4. Lalala</a></li>
+<li><a href="#org6bf89d4">4. SEO Improvements</a>
+<ul>
+<li><a href="#orge9eb4c9">4.1. Capturing links</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </nav>
@@ -87,7 +91,7 @@ for the JavaScript code in this tag.
 </nil>
 
 <nil id="outline-container-orged669e6" class="outline-2">
-<h2 id="orged669e6"><span class="section-number-2">2</span> <span class="todo tTODO">TODO</span> Template Publicaci�n</h2>
+<h2 id="orged669e6"><span class="section-number-2">2</span> <span class="todo tTODO">TODO</span> Template Publicación</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
 <li>Un directorio por <a id="org4a3bf35"></a></li>
@@ -195,38 +199,44 @@ The syntax highlighting capabilities are available once you install the htmlize 
 </div>
 </nil>
 
-<nil id="outline-container-org0f8e341" class="outline-2">
-<h2 id="org0f8e341"><span class="section-number-2">4</span> Lalala</h2>
+<nil id="outline-container-org6bf89d4" class="outline-2">
+<h2 id="org6bf89d4"><span class="section-number-2">4</span> SEO Improvements</h2>
 <div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orge9eb4c9" class="outline-3">
+<h3 id="orge9eb4c9"><span class="section-number-3">4.1</span> Capturing links</h3>
+<div class="outline-text-3" id="text-4-1">
 <p>
-askdjfhas
-asdfa
-dsfa
-dsfa
-dsf
-adsf
-asdf
-asdf
-asdfasdf
-asdf
-asdf
-asd
-fa
-dfsa
-aa
-asdf
-asdf
-asd
-fasd
-fasdf
-adsf
-asdf
+Linking to a website or piece of content would normally increase that website’s domain authority. But with a nofollow tag, it won’t.
 </p>
+
+<p>
+We need to define a way of 
+</p>
+<p>
+<a href="https://emacs.stackexchange.com/a/30598">capturing in place</a>
+our hyperlinks
+</p>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(<span style="color: #C678DD;">defun</span> <span style="color: #61AFEF;">org-capture-at-point</span> ()
+  <span style="color: #98C379;">"Insert an org capture template at point."</span>
+  (<span style="color: #C678DD;">interactive</span>)
+  (org-capture 0))
+
+(global-set-key (kbd <span style="color: #98C379;">"C-c c"</span>) #'org-capture-at-point)
+
+(<span style="color: #C678DD;">setq</span> org-capture-templates
+      '((<span style="color: #98C379;">"l"</span> <span style="color: #98C379;">"Link nofollow"</span> plain (file <span style="color: #98C379;">""</span>)
+         <span style="color: #98C379;">"#+ATTR_HTML: rel: nofollow\n [[%x][%?]]"</span>)))
+</pre>
+</div>
+</div>
 </div>
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-03-01 dom. 01:40</p>
+<p class="date">Created: 2020-03-01 dom. 02:41</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

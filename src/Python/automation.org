@@ -3,12 +3,16 @@
 #+TITLE: AUTOMATION
 
 * Selenium & WebDriver configuration
+  :PROPERTIES:
+  :ID:       4a9aba7f-22c4-4e4c-a523-faa89141cf38
+  :END:
 
   If you want to work with automation - mainly in WSL or any other GNU/Linux system - you may not want to deal with a lot of windows popping up everywhere.
 
   https://wiki.debian.org/Firefox
   https://github.com/mozilla/geckodriver/releases (Supports Firefox version >= 60)
-  
+#+ATTR_HTML: rel: nofollow
+[[https://emacs.stackexchange.com/questions/30595/how-to-org-capture-at-current-location][insert at current location]]
   #+begin_src shell
   sudo apt-get install firefox-esr
   wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz

@@ -6,7 +6,7 @@
 - https://orgmode.org/manual/Publishing-links.html#Publishing-links
 - Customize the variable org-id-link-to-org-use-id and set it to t (AKA Create ID to make link)
 
-* TODO Template Publicaci�n
+* TODO Template Publicación
 :PROPERTIES:
 :ID:       ce948347-c8bd-42c2-8baf-06e236b31d6e
 :END:
@@ -83,26 +83,27 @@ The syntax highlighting capabilities are available once you install the htmlize 
   :ensure t)
 #+END_SRC
 
-* Lalala
-askdjfhas
-asdfa
-dsfa
-dsfa
-dsf
-adsf
-asdf
-asdf
-asdfasdf
-asdf
-asdf
-asd
-fa
-dfsa
-aa
-asdf
-asdf
-asd
-fasd
-fasdf
-adsf
-asdf
+* SEO Improvements
+** Capturing links
+:PROPERTIES:
+:ID:       cedbb017-219b-486f-9433-2d8271aeb21d
+:END:
+Linking to a website or piece of content would normally increase that website’s domain authority. But with a nofollow tag, it won’t.
+
+We need to define a way of 
+#+ATTR_HTML: rel: nofollow 
+[[https://emacs.stackexchange.com/a/30598][capturing in place]]
+our hyperlinks
+
+#+begin_src elisp
+(defun org-capture-at-point ()
+  "Insert an org capture template at point."
+  (interactive)
+  (org-capture 0))
+
+(global-set-key (kbd "C-c c") #'org-capture-at-point)
+
+(setq org-capture-templates
+      '(("l" "Link nofollow" plain (file "")
+         "#+ATTR_HTML: rel: nofollow\n [[%x][%?]]")))
+#+end_src
