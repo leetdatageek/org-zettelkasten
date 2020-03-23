@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>AUTOMATION</title>
+  <atom:link href="http://www.leetdatageek.com/automation.xml" rel="self" type="application/rss+xml" />
+  <link>http://www.leetdatageek.com/</link>
+  <description><![CDATA[selenium webdriver python problems image processing threading configuration zettelkasten leetdatageek]]></description>
+  <language>en</language>
+  <pubDate>Sun, 01 Mar 2020 23:47:42 -0300</pubDate>
+  <lastBuildDate>Sun, 01 Mar 2020 23:47:42 -0300</lastBuildDate>
+  <generator>Emacs 27.0 Org-mode 9.3.6</generator>
+  <webMaster>sublivia@DESKTOP-OJ0UNAO (nil)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>AUTOMATION</title>
+    <link>http://www.leetdatageek.com/</link>
+  </image>
+
+
+  <item>
+    <title>Selenium &amp; WebDriver configuration</title>
+    <link>http://www.leetdatageek.com/automation.html#org6f1bcd3</link>
+    <author>sublivia@DESKTOP-OJ0UNAO (nil)</author>
+    <guid isPermaLink="false">http://www.leetdatageek.com/automation.html#org6f1bcd3</guid>
+    <pubDate>Sun, 01 Mar 2020 23:47:00 -0300</pubDate>
+
+    <description><![CDATA[<p>
+    If you want to work with automation - mainly in WSL or any other GNU/Linux system - you may not want to deal with a lot of windows popping up everywhere.
+    </p>
+
+    <p>
+    <a href="https://wiki.debian.org/Firefox">https://wiki.debian.org/Firefox</a>
+    <a href="https://github.com/mozilla/geckodriver/releases">https://github.com/mozilla/geckodriver/releases</a> (Supports Firefox version &gt;= 60)
+    </p>
+    <p>
+    <a href="https://emacs.stackexchange.com/questions/30595/how-to-org-capture-at-current-location">insert at current location</a>
+    </p>
+    <div class="org-src-container">
+    <pre class="src src-shell">sudo apt-get install firefox-esr
+    wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+    tar -xvf geckodriver-v0.26.0-linux64.tar.gz
+    chmod +x geckodriver
+    </pre>
+    </div>
+
+    <p>
+    Copy the file to /bin or put the script in /usr/bin or in your custom folder and add it to the PATH environment variable.
+    </p>
+
+    <div class="org-src-container">
+    <pre class="src src-python"><span style="color: #C678DD;">from</span> selenium <span style="color: #C678DD;">import</span> webdriver
+    <span style="color: #C678DD;">from</span> selenium.webdriver.firefox.options <span style="color: #C678DD;">import</span> Options
+    <span style="color: #C678DD;">import</span> os
+    <span style="color: #C678DD;">import</span> time
+
+    <span style="color: #E06C75;">options</span> = Options()
+    <span style="color: #E06C75;">options.headless</span> = <span style="color: #56B6C2;">True</span> <span style="color: #5C6370; font-style: italic;"># </span><span style="color: #5C6370; font-style: italic;">Important for CLI work</span>
+    <span style="color: #E06C75;">driver</span> = webdriver.Firefox(options=options)
+    driver.get(<span style="color: #98C379;">"http://www.google.com"</span>)
+    time.sleep(1)
+    <span style="color: #C678DD;">assert</span> <span style="color: #98C379;">"google - Google Search"</span> <span style="color: #C678DD;">in</span> driver.title
+    <span style="color: #C678DD;">print</span>(driver.title)
+    driver.<span style="color: #56B6C2;">quit</span>()
+    </pre>
+    </div>
+    ]]></description>
+  </item>
+</channel>
+</rss>

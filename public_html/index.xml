@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:media="http://search.yahoo.com/mrss/"><channel>
+  <title>Index</title>
+  <atom:link href="http://www.leetdatageek.com/index.xml" rel="self" type="application/rss+xml" />
+  <link>http://www.leetdatageek.com/</link>
+  <description><![CDATA[]]></description>
+  <language>en</language>
+  <pubDate>Mon, 23 Mar 2020 00:54:12 -0300</pubDate>
+  <lastBuildDate>Mon, 23 Mar 2020 00:54:12 -0300</lastBuildDate>
+  <generator>Emacs 27.0 Org-mode 9.3.6</generator>
+  <webMaster>sublivia@DESKTOP-OJ0UNAO (nil)</webMaster>
+  <image>
+    <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
+    <title>Index</title>
+    <link>http://www.leetdatageek.com/</link>
+  </image>
+
+  <ul class="org-ul">
+    <li><a href="Configuration/org-publish.html">OMG YEY</a></li>
+    <li><a href="Python/automation.html">AUTOMATION</a></li>
+  </ul>
+</channel>
+</rss>

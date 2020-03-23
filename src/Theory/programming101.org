@@ -1,0 +1,31 @@
+* Software Solution Design
+Since the design of a solution resides in the context of creativity and therefore two or more distinct solutions could apply to the same problem we still can notice that they all consist of at least the following two stages:
+- Analyzing the problem
+- Programming the solution
+
+** Analyzing the problem
+While it seems pretty complicated to find a good solution to a problem if we let our mind ramble on with uncanny supositions, narrowing the context of it to the machine level it makes the task of coming up with a strategy a much easier endeavor. So much that we just need three things to keep in mind:
+- Identify the data: know beforehand wich data we need and make sure it is available
+  - Know the domain of the data (possible values it SHOULD take).
+- Determine the results: keep in mind the goal of the program and which information we must obtain form it.
+- Keep the Operations explicit: find the operational relationships between data and the results to be obtained.
+
+*** Example
+Determine an employee's salary given it varies according to the hours worked during the month.
+
+- Data: Hours Worked (HW) and Hour Value (HV).
+- Result: Salary (SL)
+- Operational Relationship: SL = (HW * HV)
+
+** But it's not THAT simple...
+The calculation of the salary may seem trivial at first sight but when whe think about a data-first/solution-later approach we remember that we must know the domain of the data. How can we be completely sure that we know the values that the salary can take? A single error in this calculation can leave a family with no christmas presents or get an accounting employee fired. Some qestions we may ask are:
+- How many hours is a worker allowed to do max?
+- Is any contract part time? How many hours does it have?
+- What is the minimum and maximum values for the hourly pay?
+- What does the hourly pay depend on? Seniority? Years of service?
+- etc.
+Most of the time you won't be the one who knows most of the answers so the logical decision to make is to ask them to somebody with *domain knowledge* on the subject.
+
+#+begin_quote
+You cannot know the domain of data unless you have domain knowledge.
+#+end_quote

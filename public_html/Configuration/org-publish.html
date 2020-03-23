@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-03-01 dom. 16:13 -->
+<!-- 2020-03-23 lun. 00:53 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish Tips &amp; Tricks</title>
@@ -67,7 +67,7 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org980a630">1. OMG!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="smiley">smiley</span></span></a></li>
+<li><a href="#org1a797d7">1. Setting up the environment</a></li>
 <li><a href="#orged669e6">2. <span class="todo TODO">TODO</span> Template Publicación</a></li>
 <li><a href="#org67084b7">3. AAAA</a>
 <ul>
@@ -84,14 +84,27 @@ for the JavaScript code in this tag.
 </div>
 </nav>
 
-<nil id="outline-container-org980a630" class="outline-2">
-<h2 id="org980a630"><span class="section-number-2">1</span> OMG!&#xa0;&#xa0;&#xa0;<span class="tag"><span class="smiley">smiley</span></span></h2>
+<nil id="outline-container-org1a797d7" class="outline-2">
+<h2 id="org1a797d7"><span class="section-number-2">1</span> Setting up the environment</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://orgmode.org/manual/In_002dbuffer-Settings.html">https://orgmode.org/manual/In_002dbuffer-Settings.html</a></li>
 <li><a href="https://orgmode.org/manual/Publishing-links.html#Publishing-links">https://orgmode.org/manual/Publishing-links.html#Publishing-links</a></li>
 <li>Customize the variable org-id-link-to-org-use-id and set it to t (AKA Create ID to make link)</li>
 </ul>
+
+<div class="org-src-container">
+<pre class="src src-elisp">(add-to-list 'package-archives
+    '(<span style="color: #98C379;">"org"</span> . <span style="color: #98C379;">"https://orgmode.org/elpa/"</span>) t)
+(add-to-list 'package-archives
+    '(<span style="color: #98C379;">"org-plus-contrib"</span> . <span style="color: #98C379;">"https://orgmode.org/elpa/"</span>) t)
+
+(<span style="color: #C678DD;">unless</span> (package-installed-p 'org-plus-contrib)
+  (package-refresh-contents)
+  (package-install 'org-plus-contrib))
+(<span style="color: #C678DD;">require</span> '<span style="color: #56B6C2;">org-plus-contrib</span>)
+</pre>
+</div>
 </div>
 </nil>
 
@@ -257,7 +270,7 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-03-01 dom. 16:13</p>
+<p class="date">Created: 2020-03-23 lun. 00:53</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

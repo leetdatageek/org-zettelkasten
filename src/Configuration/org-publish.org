@@ -6,14 +6,31 @@
 #+HTML_HEAD: <meta property="og:type" content="website" />
 #+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
 
-* OMG!                                                               :smiley:
+* Setting up the environment
+:PROPERTIES:
+:ID:       a915e191-9545-4b97-a2fe-a3f5c2cb21ea
+:PUBDATE:  <2020-03-01 dom. 23:47>
+:END:
 - https://orgmode.org/manual/In_002dbuffer-Settings.html
 - https://orgmode.org/manual/Publishing-links.html#Publishing-links
 - Customize the variable org-id-link-to-org-use-id and set it to t (AKA Create ID to make link)
 
+#+begin_src elisp
+(add-to-list 'package-archives
+    '("org" . "https://orgmode.org/elpa/") t)
+(add-to-list 'package-archives
+    '("org-plus-contrib" . "https://orgmode.org/elpa/") t)
+
+(unless (package-installed-p 'org-plus-contrib)
+  (package-refresh-contents)
+  (package-install 'org-plus-contrib))
+(require 'org-plus-contrib)
+#+end_src
+
 * TODO Template Publicación
 :PROPERTIES:
 :ID:       ce948347-c8bd-42c2-8baf-06e236b31d6e
+:PUBDATE:  <2020-03-01 dom. 23:47>
 :END:
 
 - Un directorio por <<TEMA>>
@@ -22,8 +39,14 @@
   - Copiar el link con org-id-copy
 
 * AAAA
-
+:PROPERTIES:
+:ID:       81e82f6e-edd1-416e-b5f2-0f19b7902f11
+:PUBDATE:  <2020-03-01 dom. 23:47>
+:END:
 ** Initial Problem
+:PROPERTIES:
+:ID:       bb947b4f-2ad0-400e-88ea-1fd3f2aecb73
+:END:
 The elements wrapping the headline content were not contained inside a parent div/section, making it pretty hard to organize the content in the page since they kept overlapping each other using grid and flexbox was impossible due to them not having a parent html element.
 The TOC needed to grow in size in relation to the content of the page. The logical solution would be to use flexbox but since we already discarded that as an option I wah stuck with traditional "box" manipulation or css grid.
 
@@ -42,6 +65,9 @@ The TOC needed to grow in size in relation to the content of the page. The logic
 #+END_EXAMPLE
 
 ** The Solution
+:PROPERTIES:
+:ID:       cff91b8d-7bba-4f39-ad17-88a6c0ad4f41
+:END:
 The template needs to have three rows and two columns but the content at [1][1] is forced into position so we don't need to reference it by name. 
 
 #+BEGIN_SRC css
@@ -89,6 +115,10 @@ The syntax highlighting capabilities are available once you install the htmlize 
 #+END_SRC
 
 * SEO Improvements
+:PROPERTIES:
+:ID:       5090516a-6bf7-4dfd-b60e-3f81b4ac712b
+:PUBDATE:  <2020-03-01 dom. 23:47>
+:END:
 ** Capturing links
 :PROPERTIES:
 :ID:       837f22ed-efed-43db-bb24-d5f10d5b6f7c

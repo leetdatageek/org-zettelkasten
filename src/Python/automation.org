@@ -5,6 +5,7 @@
 * Selenium & WebDriver configuration
   :PROPERTIES:
   :ID:       4a9aba7f-22c4-4e4c-a523-faa89141cf38
+  :PUBDATE:  <2020-03-01 dom. 23:47>
   :END:
 
   If you want to work with automation - mainly in WSL or any other GNU/Linux system - you may not want to deal with a lot of windows popping up everywhere.
