@@ -1,0 +1,13 @@
+#+STARTUP: indent align hidestars
+#+TITLE: org-publish Tips & Tricks
+#+DESCRIPTION: Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids.
+#+HTML_HEAD: <meta property="og:title" content="org-publish Tips & Tricks" />
+#+HTML_HEAD: <meta property="og:description" content="Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
+
+* Command Line
+** Unzipping files modified in a specific date
+#+begin_src cmd
+ls -la | awk 'NR>2 {if($7==26 && $6=="Mar") print "./"$9;}' | xargs -n1 unzip -d ../cases/week_03/
+#+end_src
