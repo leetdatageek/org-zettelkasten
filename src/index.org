@@ -1,4 +1,11 @@
 #+TITLE: Index
 
-- [[file:Configuration/org-publish.org][OMG YEY]]
-- [[file:Python/automation.org][AUTOMATION]]
+- Configuration
+  - [[file:Configuration/org-publish.org][OMG YEY]]
+- Python
+  - [[file:Python/automation.org][AUTOMATION]]
+  - [[file:Python/learning.org][Learning Notes]]
+- Shell
+  - [[file:Shell/tips-and-tricks.org][cmd Tips & Tricks]]
+- Theory
+  - [[file:Theory/programming101.org][programming101]]

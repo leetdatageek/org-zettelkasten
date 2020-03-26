@@ -1,7 +1,7 @@
 #+STARTUP: indent align hidestars
-#+TITLE: org-publish Tips & Tricks
+#+TITLE: Learning Notes
 #+DESCRIPTION: Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids.
-#+HTML_HEAD: <meta property="og:title" content="org-publish Tips & Tricks" />
+#+HTML_HEAD: <meta property="og:title" content="Learning Notes" />
 #+HTML_HEAD: <meta property="og:description" content="Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids." />
 #+HTML_HEAD: <meta property="og:type" content="website" />
 #+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
