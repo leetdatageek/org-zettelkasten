@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-03-26 jue. 20:43 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>&lrm;</title>
+<meta name="generator" content="Org mode">
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org875afde">1. Software Solution Design</a>
+<ul>
+<li><a href="#org38ed880">1.1. Analyzing the problem</a>
+<ul>
+<li><a href="#org0f3f4f4">1.1.1. Example</a></li>
+</ul>
+</li>
+<li><a href="#org9b2f7e1">1.2. But it's not THAT simple&#x2026;</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<nil id="outline-container-org875afde" class="outline-2">
+<h2 id="org875afde"><span class="section-number-2">1</span> Software Solution Design</h2>
+<div class="outline-text-2" id="text-1">
+<p>
+Since the design of a solution resides in the context of creativity and therefore two or more distinct solutions could apply to the same problem we still can notice that they all consist of at least the following two stages:
+</p>
+<ul class="org-ul">
+<li>Analyzing the problem</li>
+<li>Programming the solution</li>
+</ul>
+</div>
+
+<div id="outline-container-org38ed880" class="outline-3">
+<h3 id="org38ed880"><span class="section-number-3">1.1</span> Analyzing the problem</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+While it seems pretty complicated to find a good solution to a problem if we let our mind ramble on with uncanny supositions, narrowing the context of it to the machine level it makes the task of coming up with a strategy a much easier endeavor. So much that we just need three things to keep in mind:
+</p>
+<ul class="org-ul">
+<li>Identify the data: know beforehand wich data we need and make sure it is available
+<ul class="org-ul">
+<li>Know the domain of the data (possible values it SHOULD take).</li>
+</ul></li>
+<li>Determine the results: keep in mind the goal of the program and which information we must obtain form it.</li>
+<li>Keep the Operations explicit: find the operational relationships between data and the results to be obtained.</li>
+</ul>
+</div>
+
+<div id="outline-container-org0f3f4f4" class="outline-4">
+<h4 id="org0f3f4f4"><span class="section-number-4">1.1.1</span> Example</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Determine an employee's salary given it varies according to the hours worked during the month.
+</p>
+
+<ul class="org-ul">
+<li>Data: Hours Worked (HW) and Hour Value (HV).</li>
+<li>Result: Salary (SL)</li>
+<li>Operational Relationship: SL = (HW * HV)</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9b2f7e1" class="outline-3">
+<h3 id="org9b2f7e1"><span class="section-number-3">1.2</span> But it's not THAT simple&#x2026;</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+The calculation of the salary may seem trivial at first sight but when whe think about a data-first/solution-later approach we remember that we must know the domain of the data. How can we be completely sure that we know the values that the salary can take? A single error in this calculation can leave a family with no christmas presents or get an accounting employee fired. Some qestions we may ask are:
+</p>
+<ul class="org-ul">
+<li>How many hours is a worker allowed to do max?</li>
+<li>Is any contract part time? How many hours does it have?</li>
+<li>What is the minimum and maximum values for the hourly pay?</li>
+<li>What does the hourly pay depend on? Seniority? Years of service?</li>
+<li>etc.</li>
+</ul>
+<p>
+Most of the time you won't be the one who knows most of the answers so the logical decision to make is to ask them to somebody with <b>domain knowledge</b> on the subject.
+</p>
+
+<blockquote>
+<p>
+You cannot know the domain of data unless you have domain knowledge.
+</p>
+</blockquote>
+</div>
+</div>
+</nil>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2020-03-26 jue. 20:43</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
