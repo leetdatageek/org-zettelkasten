@@ -11,3 +11,11 @@
 #+begin_src cmd
 ls -la | awk 'NR>2 {if($7==26 && $6=="Mar") print "./"$9;}' | xargs -n1 unzip -d ../cases/week_03/
 #+end_src
+
+** AWS RDS (Postgres)
+In the prompt to crate a new database **I think** the prompt asked me for a database name, but in reality what the web app refers to is the server name or at least an identifier within AWS. The sefault database that is created has the **postgres** name, and if you provide no argument specifying it to the psql utility it uses your username as the dbname which could be the default - **postgres** - but using a different one seems more secure to me.
+
+#+begin_src shell
+psql -h <server_name>.{secret}.us-west-2.rds.amazonaws.com -U leetdatageek --password --dbname=postgres
+#+end_src
+
