@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-03-26 jue. 20:43 -->
+<!-- 2020-04-07 Tue 21:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cmd Tips &amp; Tricks</title>
 <meta name="generator" content="Org mode">
+<meta name="author" content="leabravo">
 <meta name="description" content="Tips &amp; Tricks for making your life easier when publishing blogs with emacs on minimum steroids."
 >
 <meta property="og:title" content="cmd Tips & Tricks" />
@@ -67,21 +68,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgee4d1b3">1. Command Line</a>
+<li><a href="#orge59fe3f">1. Command Line</a>
 <ul>
-<li><a href="#org3f788d7">1.1. Unzipping files modified in a specific date</a></li>
+<li><a href="#org099c80b">1.1. Unzipping files modified in a specific date</a></li>
+<li><a href="#orgbf574ed">1.2. AWS RDS (Postgres)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<nil id="outline-container-orgee4d1b3" class="outline-2">
-<h2 id="orgee4d1b3"><span class="section-number-2">1</span> Command Line</h2>
+<nil id="outline-container-orge59fe3f" class="outline-2">
+<h2 id="orge59fe3f"><span class="section-number-2">1</span> Command Line</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org3f788d7" class="outline-3">
-<h3 id="org3f788d7"><span class="section-number-3">1.1</span> Unzipping files modified in a specific date</h3>
+<div id="outline-container-org099c80b" class="outline-3">
+<h3 id="org099c80b"><span class="section-number-3">1.1</span> Unzipping files modified in a specific date</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-cmd">ls -la | awk 'NR&gt;2 {if($7==26 &amp;&amp; $6=="Mar") print "./"$9;}' | xargs -n1 unzip -d ../cases/week_03/
@@ -89,10 +91,25 @@ for the JavaScript code in this tag.
 </div>
 </div>
 </div>
+
+<div id="outline-container-orgbf574ed" class="outline-3">
+<h3 id="orgbf574ed"><span class="section-number-3">1.2</span> AWS RDS (Postgres)</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+In the prompt to crate a new database <b><b>I think</b></b> the prompt asked me for a database name, but in reality what the web app refers to is the server name or at least an identifier within AWS. The sefault database that is created has the <b><b>postgres</b></b> name, and if you provide no argument specifying it to the psql utility it uses your username as the dbname which could be the default - <b><b>postgres</b></b> - but using a different one seems more secure to me.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">psql -h &lt;server_name&gt;.{secret}.us-west-2.rds.amazonaws.com -U leetdatageek --password --dbname=postgres
+</pre>
+</div>
+</div>
+</div>
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-03-26 jue. 20:43</p>
+<p class="author">Author: leabravo</p>
+<p class="date">Created: 2020-04-07 Tue 21:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

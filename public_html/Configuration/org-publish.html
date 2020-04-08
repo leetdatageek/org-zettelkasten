@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-03-26 jue. 20:43 -->
+<!-- 2020-04-07 Tue 21:22 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish Tips &amp; Tricks</title>
 <meta name="generator" content="Org mode">
+<meta name="author" content="leabravo">
 <meta name="description" content="Tips &amp; Tricks for making your life easier when publishing blogs with emacs on minimum steroids."
 >
 <meta property="og:title" content="org-publish Tips & Tricks" />
@@ -67,25 +68,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1a797d7">1. Setting up the environment</a></li>
-<li><a href="#orged669e6">2. <span class="todo TODO">TODO</span> Template Publicación</a></li>
-<li><a href="#org67084b7">3. AAAA</a>
+<li><a href="#org857d863">1. Setting up the environment</a></li>
+<li><a href="#orgeef1bb2">2. <span class="todo TODO">TODO</span> Template Publicación</a></li>
+<li><a href="#org5a0108f">3. AAAA</a>
 <ul>
-<li><a href="#org0fa68b3">3.1. Initial Problem</a></li>
-<li><a href="#org0302c3e">3.2. The Solution</a></li>
+<li><a href="#orgb7c60aa">3.1. Initial Problem</a></li>
+<li><a href="#org6712ca9">3.2. The Solution</a></li>
 </ul>
 </li>
-<li><a href="#org6bf89d4">4. SEO Improvements</a>
+<li><a href="#org47d82a4">4. SEO Improvements</a>
 <ul>
-<li><a href="#orge9eb4c9">4.1. Capturing links</a></li>
+<li><a href="#org62b8933">4.1. Capturing links</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<nil id="outline-container-org1a797d7" class="outline-2">
-<h2 id="org1a797d7"><span class="section-number-2">1</span> Setting up the environment</h2>
+<nil id="outline-container-org857d863" class="outline-2">
+<h2 id="org857d863"><span class="section-number-2">1</span> Setting up the environment</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://orgmode.org/manual/In_002dbuffer-Settings.html">https://orgmode.org/manual/In_002dbuffer-Settings.html</a></li>
@@ -108,11 +109,11 @@ for the JavaScript code in this tag.
 </div>
 </nil>
 
-<nil id="outline-container-orged669e6" class="outline-2">
-<h2 id="orged669e6"><span class="section-number-2">2</span> <span class="todo tTODO">TODO</span> Template Publicación</h2>
+<nil id="outline-container-orgeef1bb2" class="outline-2">
+<h2 id="orgeef1bb2"><span class="section-number-2">2</span> <span class="todo tTODO">TODO</span> Template Publicación</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>Un directorio por <a id="org4a3bf35"></a></li>
+<li>Un directorio por <a id="orgca86231"></a></li>
 <li>Cada headline con un identificador <a href="foo.html#custom-id">foo.html#custom-id</a></li>
 <li>Con deft <a href="https://jblevins.org/projects/deft/">https://jblevins.org/projects/deft/</a> buscar dentro de las carpeta del proyecto los temas asociados y copiar el ID
 <ul class="org-ul">
@@ -122,12 +123,12 @@ for the JavaScript code in this tag.
 </div>
 </nil>
 
-<nil id="outline-container-org67084b7" class="outline-2">
-<h2 id="org67084b7"><span class="section-number-2">3</span> AAAA</h2>
+<nil id="outline-container-org5a0108f" class="outline-2">
+<h2 id="org5a0108f"><span class="section-number-2">3</span> AAAA</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0fa68b3" class="outline-3">
-<h3 id="org0fa68b3"><span class="section-number-3">3.1</span> Initial Problem</h3>
+<div id="outline-container-orgb7c60aa" class="outline-3">
+<h3 id="orgb7c60aa"><span class="section-number-3">3.1</span> Initial Problem</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 The elements wrapping the headline content were not contained inside a parent div/section, making it pretty hard to organize the content in the page since they kept overlapping each other using grid and flexbox was impossible due to them not having a parent html element.
@@ -150,8 +151,8 @@ The TOC needed to grow in size in relation to the content of the page. The logic
 </div>
 </div>
 
-<div id="outline-container-org0302c3e" class="outline-3">
-<h3 id="org0302c3e"><span class="section-number-3">3.2</span> The Solution</h3>
+<div id="outline-container-org6712ca9" class="outline-3">
+<h3 id="org6712ca9"><span class="section-number-3">3.2</span> The Solution</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 The template needs to have three rows and two columns but the content at [1][1] is forced into position so we don't need to reference it by name. 
@@ -159,8 +160,8 @@ The template needs to have three rows and two columns but the content at [1][1] 
 
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #61AFEF;">#content </span>{
-    <span style="color: #C678DD;">display</span>: inline-grid;
-    <span style="color: #C678DD;">grid-template-areas</span>: <span style="color: #98C379;">'toc header'</span>
+    <span style="color: #E06C75;">display</span>: inline-grid;
+    <span style="color: #E06C75;">grid-template-areas</span>: <span style="color: #98C379;">'toc header'</span>
         <span style="color: #98C379;">'toc _'</span>
         <span style="color: #98C379;">'toc footer'</span>;
 }
@@ -173,8 +174,8 @@ The header is positioned using the grid-area name
 
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #61AFEF;">header </span>{
-    <span style="color: #C678DD;">grid-area</span>: header;
-    <span style="color: #C678DD;">width</span>: auto;
+    <span style="color: #E06C75;">grid-area</span>: header;
+    <span style="color: #E06C75;">width</span>: auto;
 } <span style="color: #5C6370; font-style: italic;">/* </span><span style="color: #5C6370; font-style: italic;">document title </span><span style="color: #5C6370; font-style: italic;">*/</span>
 </pre>
 </div>
@@ -185,8 +186,8 @@ The content within the headlines in the org file has to be forced into position 
 
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #61AFEF;">[class^=</span><span style="color: #98C379;">"outline-"</span><span style="color: #61AFEF;">] </span>{
-    <span style="color: #C678DD;">grid-row</span>: auto;
-    <span style="color: #C678DD;">grid-column</span>: 2;
+    <span style="color: #E06C75;">grid-row</span>: auto;
+    <span style="color: #E06C75;">grid-column</span>: 2;
 }
 </pre>
 </div>
@@ -197,8 +198,8 @@ The TOC can be positioned in the traditional way but the bottom of it should rea
 
 <div class="org-src-container">
 <pre class="src src-css"><span style="color: #61AFEF;">#table-of-contents </span>{
-    <span style="color: #C678DD;">grid-area</span>: toc;
-    <span style="color: #C678DD;">grid-row-end</span>: 999;
+    <span style="color: #E06C75;">grid-area</span>: toc;
+    <span style="color: #E06C75;">grid-row-end</span>: 999;
 }
 </pre>
 </div>
@@ -217,12 +218,12 @@ The syntax highlighting capabilities are available once you install the htmlize 
 </div>
 </nil>
 
-<nil id="outline-container-org6bf89d4" class="outline-2">
-<h2 id="org6bf89d4"><span class="section-number-2">4</span> SEO Improvements</h2>
+<nil id="outline-container-org47d82a4" class="outline-2">
+<h2 id="org47d82a4"><span class="section-number-2">4</span> SEO Improvements</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orge9eb4c9" class="outline-3">
-<h3 id="orge9eb4c9"><span class="section-number-3">4.1</span> Capturing links</h3>
+<div id="outline-container-org62b8933" class="outline-3">
+<h3 id="org62b8933"><span class="section-number-3">4.1</span> Capturing links</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Linking to a website or piece of content would normally increase that website’s domain authority. But with a nofollow tag, it won’t.
@@ -270,7 +271,8 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </nil>
 </div>
 <div id="postamble" class="status">
-<p class="date">Created: 2020-03-26 jue. 20:43</p>
+<p class="author">Author: leabravo</p>
+<p class="date">Created: 2020-04-07 Tue 21:22</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

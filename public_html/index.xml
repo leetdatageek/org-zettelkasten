@@ -14,10 +14,10 @@
   <link>http://www.leetdatageek.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Thu, 26 Mar 2020 20:43:54 -0300</pubDate>
-  <lastBuildDate>Thu, 26 Mar 2020 20:43:54 -0300</lastBuildDate>
-  <generator>Emacs 27.0 Org-mode 9.3.6</generator>
-  <webMaster>sublivia@DESKTOP-OJ0UNAO (nil)</webMaster>
+  <pubDate>Tue, 07 Apr 2020 21:22:17 -0300</pubDate>
+  <lastBuildDate>Tue, 07 Apr 2020 21:22:17 -0300</lastBuildDate>
+  <generator>Emacs 25.2 Org-mode 9.3.6</generator>
+  <webMaster>leabravo@cannalenovo (leabravo)</webMaster>
   <image>
     <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
     <title>Index</title>
@@ -27,7 +27,11 @@
   <ul class="org-ul">
     <li>Configuration
     <ul class="org-ul">
-      <li><a href="Configuration/org-publish.html">OMG YEY</a></li>
+      <li><a href="Configuration/org-publish.html">org-publish Tips &amp; Tricks</a></li>
+    </ul></li>
+    <li>Linux
+    <ul class="org-ul">
+      <li><a href="Linux/configuration.html">Linux Configuration Notes</a></li>
     </ul></li>
     <li>Python
     <ul class="org-ul">

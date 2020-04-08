@@ -1,0 +1,23 @@
+#+STARTUP: indent align hidestars
+#+TITLE: Linux Configuration Notes
+#+DESCRIPTION: Tips & Tricks for making your life easier when publishing blogs with emacs on minimum steroids.
+#+HTML_HEAD: <meta property="og:title" content="org-publish Tips & Tricks" />
+#+HTML_HEAD: <meta property="og:description" content="Linux Configuration Notes." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
+* Networking
+** l2tp over IPsec
+workaround to make the VPN work on Ubuntu 19.04, using network-manager-l2tp 1.2.10-1
+#+begin_example
+$ sudo apt install network-manager-l2tp network-manager-strongswan strongswan-libcharon strongswan-nm
+$ sudo service xl2tpd stop
+$ sudo update-rc.d xl2tpd disable
+#+end_example
+
+* Peripherals
+** Printer
+   :PROPERTIES:
+   :ID:       99e249f5-69c4-4cc4-9e6f-1515f65f1df2
+   :END:
+- Network Printer
+{{{a(,https://linuxhint.com/install_network_printers_linux/)}}}
