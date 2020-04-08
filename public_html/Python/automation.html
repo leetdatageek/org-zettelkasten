@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-04-07 Tue 21:22 -->
+<!-- 2020-04-08 Wed 13:58 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AUTOMATION</title>
@@ -97,19 +97,19 @@ Copy the file to /bin or put the script in /usr/bin or in your custom folder and
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #C678DD;">from</span> selenium <span style="color: #C678DD;">import</span> webdriver
-<span style="color: #C678DD;">from</span> selenium.webdriver.firefox.options <span style="color: #C678DD;">import</span> Options
-<span style="color: #C678DD;">import</span> os
-<span style="color: #C678DD;">import</span> time
+<pre class="src src-python"><span style="color: #fb4933;">from</span> selenium <span style="color: #fb4933;">import</span> webdriver
+<span style="color: #fb4933;">from</span> selenium.webdriver.firefox.options <span style="color: #fb4933;">import</span> Options
+<span style="color: #fb4933;">import</span> os
+<span style="color: #fb4933;">import</span> time
 
-<span style="color: #E06C75;">options</span> = Options()
-<span style="color: #E06C75;">options.headless</span> = <span style="color: #56B6C2;">True</span> <span style="color: #5C6370; font-style: italic;"># </span><span style="color: #5C6370; font-style: italic;">Important for CLI work</span>
-<span style="color: #E06C75;">driver</span> = webdriver.Firefox(options=options)
-driver.get(<span style="color: #98C379;">"http://www.google.com"</span>)
+<span style="color: #83a598;">options</span> = Options()
+<span style="color: #83a598;">options.headless</span> = <span style="color: #d3869b;">True</span> <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Important for CLI work</span>
+<span style="color: #83a598;">driver</span> = webdriver.Firefox(options=options)
+driver.get(<span style="color: #b8bb26;">"http://www.google.com"</span>)
 time.sleep(1)
-<span style="color: #C678DD;">assert</span> <span style="color: #98C379;">"google - Google Search"</span> <span style="color: #C678DD;">in</span> driver.title
-<span style="color: #C678DD;">print</span>(driver.title)
-driver.<span style="color: #56B6C2;">quit</span>()
+<span style="color: #fb4933;">assert</span> <span style="color: #b8bb26;">"google - Google Search"</span> <span style="color: #fb4933;">in</span> driver.title
+<span style="color: #fb4933;">print</span>(driver.title)
+driver.<span style="color: #d3869b;">quit</span>()
 </pre>
 </div>
 </div>
@@ -117,7 +117,7 @@ driver.<span style="color: #56B6C2;">quit</span>()
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-04-07 Tue 21:22</p>
+<p class="date">Created: 2020-04-08 Wed 13:58</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-04-07 Tue 21:22 -->
+<!-- 2020-04-08 Wed 13:58 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish Tips &amp; Tricks</title>
@@ -96,14 +96,14 @@ for the JavaScript code in this tag.
 
 <div class="org-src-container">
 <pre class="src src-elisp">(add-to-list 'package-archives
-    '(<span style="color: #98C379;">"org"</span> . <span style="color: #98C379;">"https://orgmode.org/elpa/"</span>) t)
+    '(<span style="color: #b8bb26;">"org"</span> . <span style="color: #b8bb26;">"https://orgmode.org/elpa/"</span>) t)
 (add-to-list 'package-archives
-    '(<span style="color: #98C379;">"org-plus-contrib"</span> . <span style="color: #98C379;">"https://orgmode.org/elpa/"</span>) t)
+    '(<span style="color: #b8bb26;">"org-plus-contrib"</span> . <span style="color: #b8bb26;">"https://orgmode.org/elpa/"</span>) t)
 
-(<span style="color: #C678DD;">unless</span> (package-installed-p 'org-plus-contrib)
+(<span style="color: #fb4933;">unless</span> (package-installed-p 'org-plus-contrib)
   (package-refresh-contents)
   (package-install 'org-plus-contrib))
-(<span style="color: #C678DD;">require</span> '<span style="color: #56B6C2;">org-plus-contrib</span>)
+(<span style="color: #fb4933;">require</span> '<span style="color: #d3869b;">org-plus-contrib</span>)
 </pre>
 </div>
 </div>
@@ -159,11 +159,11 @@ The template needs to have three rows and two columns but the content at [1][1] 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #61AFEF;">#content </span>{
-    <span style="color: #E06C75;">display</span>: inline-grid;
-    <span style="color: #E06C75;">grid-template-areas</span>: <span style="color: #98C379;">'toc header'</span>
-        <span style="color: #98C379;">'toc _'</span>
-        <span style="color: #98C379;">'toc footer'</span>;
+<pre class="src src-css"><span style="color: #fabd2f;">#content </span>{
+    <span style="color: #83a598;">display</span>: inline-grid;
+    <span style="color: #83a598;">grid-template-areas</span>: <span style="color: #b8bb26;">'toc header'</span>
+        <span style="color: #b8bb26;">'toc _'</span>
+        <span style="color: #b8bb26;">'toc footer'</span>;
 }
 </pre>
 </div>
@@ -173,10 +173,10 @@ The header is positioned using the grid-area name
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #61AFEF;">header </span>{
-    <span style="color: #E06C75;">grid-area</span>: header;
-    <span style="color: #E06C75;">width</span>: auto;
-} <span style="color: #5C6370; font-style: italic;">/* </span><span style="color: #5C6370; font-style: italic;">document title </span><span style="color: #5C6370; font-style: italic;">*/</span>
+<pre class="src src-css"><span style="color: #fabd2f;">header </span>{
+    <span style="color: #83a598;">grid-area</span>: header;
+    <span style="color: #83a598;">width</span>: auto;
+} <span style="color: #7c6f64;">/* </span><span style="color: #7c6f64;">document title </span><span style="color: #7c6f64;">*/</span>
 </pre>
 </div>
 
@@ -185,9 +185,9 @@ The content within the headlines in the org file has to be forced into position 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #61AFEF;">[class^=</span><span style="color: #98C379;">"outline-"</span><span style="color: #61AFEF;">] </span>{
-    <span style="color: #E06C75;">grid-row</span>: auto;
-    <span style="color: #E06C75;">grid-column</span>: 2;
+<pre class="src src-css"><span style="color: #fabd2f;">[class^=</span><span style="color: #b8bb26;">"outline-"</span><span style="color: #fabd2f;">] </span>{
+    <span style="color: #83a598;">grid-row</span>: auto;
+    <span style="color: #83a598;">grid-column</span>: 2;
 }
 </pre>
 </div>
@@ -197,9 +197,9 @@ The TOC can be positioned in the traditional way but the bottom of it should rea
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #61AFEF;">#table-of-contents </span>{
-    <span style="color: #E06C75;">grid-area</span>: toc;
-    <span style="color: #E06C75;">grid-row-end</span>: 999;
+<pre class="src src-css"><span style="color: #fabd2f;">#table-of-contents </span>{
+    <span style="color: #83a598;">grid-area</span>: toc;
+    <span style="color: #83a598;">grid-row-end</span>: 999;
 }
 </pre>
 </div>
@@ -209,9 +209,9 @@ The syntax highlighting capabilities are available once you install the htmlize 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span style="color: #C678DD;">use-package</span> <span style="color: #56B6C2;">htmlize</span>
-  <span style="color: #56B6C2;">:init</span>
-  <span style="color: #56B6C2;">:ensure</span> t)
+<pre class="src src-elisp">(<span style="color: #fb4933;">use-package</span> <span style="color: #d3869b;">htmlize</span>
+  <span style="color: #fe8019;">:init</span>
+  <span style="color: #fe8019;">:ensure</span> t)
 </pre>
 </div>
 </div>
@@ -237,18 +237,18 @@ Unfortunately using the #+ATTR<sub>HTML</sub> tag would wrap the hyperlink in a 
 Once we set up a way for <a href='https://emacs.stackexchange.com/a/30598' rel='external nofollow'>capturing our templates in place</a> the next way is to set up the template using the inline html trick and <a href='https://orgmode.org/manual/Template-expansion.html#Template-expansion' rel='external nofollow'>template expansion</a> alongside <a href='https://orgmode.org/manual/Macro-Replacement.html' rel='external nofollow'>macro replacement</a>.
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp"><span style="color: #5C6370; font-style: italic;">;; </span><span style="color: #5C6370; font-style: italic;">marcos are pre-processed... dah!</span>
+<pre class="src src-elisp"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">marcos are pre-processed... dah!</span>
 #+MACRO: a @@html:&lt;a href='$2' rel='external nofollow'&gt;$1&lt;/a&gt;@@
 
-(<span style="color: #C678DD;">defun</span> <span style="color: #61AFEF;">org-capture-at-point</span> ()
-  <span style="color: #98C379;">"Insert an org capture template at point."</span>
-  (<span style="color: #C678DD;">interactive</span>)
+(<span style="color: #fb4933;">defun</span> <span style="color: #fabd2f;">org-capture-at-point</span> ()
+  <span style="color: #b8bb26;">"Insert an org capture template at point."</span>
+  (<span style="color: #fb4933;">interactive</span>)
   (org-capture 0))
 
-(global-set-key (kbd <span style="color: #98C379;">"C-c c"</span>) #'org-capture-at-point)
+(global-set-key (kbd <span style="color: #b8bb26;">"C-c c"</span>) #'org-capture-at-point)
 
-(<span style="color: #C678DD;">setq</span> org-capture-templates
-      '((<span style="color: #98C379;">"l"</span> <span style="color: #98C379;">"Link nofollow"</span> plain (file <span style="color: #98C379;">""</span>) <span style="color: #98C379;">"{{{a(%?,%x)}}}"</span>)))
+(<span style="color: #fb4933;">setq</span> org-capture-templates
+      '((<span style="color: #b8bb26;">"l"</span> <span style="color: #b8bb26;">"Link nofollow"</span> plain (file <span style="color: #b8bb26;">""</span>) <span style="color: #b8bb26;">"{{{a(%?,%x)}}}"</span>)))
 </pre>
 </div>
 
@@ -257,9 +257,9 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">#+HTML_HEAD: &lt;meta property=<span style="color: #98C379;">"og:title"</span> content=<span style="color: #98C379;">"Title"</span> /&gt;
-#+HTML_HEAD: &lt;meta property=<span style="color: #98C379;">"og:description"</span> content=<span style="color: #98C379;">"My Site Description"</span> /&gt;
-#+HTML_HEAD: &lt;meta property=<span style="color: #98C379;">"og:type"</span> content=<span style="color: #98C379;">"website"</span> /&gt;
+<pre class="src src-elisp">#+HTML_HEAD: &lt;meta property=<span style="color: #b8bb26;">"og:title"</span> content=<span style="color: #b8bb26;">"Title"</span> /&gt;
+#+HTML_HEAD: &lt;meta property=<span style="color: #b8bb26;">"og:description"</span> content=<span style="color: #b8bb26;">"My Site Description"</span> /&gt;
+#+HTML_HEAD: &lt;meta property=<span style="color: #b8bb26;">"og:type"</span> content=<span style="color: #b8bb26;">"website"</span> /&gt;
 </pre>
 </div>
 
@@ -272,7 +272,7 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-04-07 Tue 21:22</p>
+<p class="date">Created: 2020-04-08 Wed 13:58</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
