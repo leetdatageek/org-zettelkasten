@@ -20,4 +20,4 @@ $ sudo update-rc.d xl2tpd disable
    :ID:       99e249f5-69c4-4cc4-9e6f-1515f65f1df2
    :END:
 - Network Printer
-{{{a(,https://linuxhint.com/install_network_printers_linux/)}}}
+{{{a(tutorial,https://linuxhint.com/install_network_printers_linux/)}}}
