@@ -14,8 +14,8 @@
   <link>http://www.leetdatageek.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Wed, 08 Apr 2020 13:58:12 -0300</pubDate>
-  <lastBuildDate>Wed, 08 Apr 2020 13:58:12 -0300</lastBuildDate>
+  <pubDate>Thu, 21 May 2020 02:53:25 -0300</pubDate>
+  <lastBuildDate>Thu, 21 May 2020 02:53:25 -0300</lastBuildDate>
   <generator>Emacs 25.2 Org-mode 9.3.6</generator>
   <webMaster>leabravo@cannalenovo (leabravo)</webMaster>
   <image>
@@ -25,6 +25,10 @@
   </image>
 
   <ul class="org-ul">
+    <li>Clojure
+    <ul class="org-ul">
+      <li><a href="Clojure/configuration.html">configuration</a></li>
+    </ul></li>
     <li>Configuration
     <ul class="org-ul">
       <li><a href="Configuration/org-publish.html">org-publish Tips &amp; Tricks</a></li>
@@ -32,6 +36,14 @@
     <li>Linux
     <ul class="org-ul">
       <li><a href="Linux/configuration.html">Linux Configuration Notes</a></li>
+    </ul></li>
+    <li>Misc
+    <ul class="org-ul">
+      <li><a href="Misc/til.html">Things I learned today.</a></li>
+    </ul></li>
+    <li>Orgmode
+    <ul class="org-ul">
+      <li><a href="Orgmode/configuration.html">configuration</a></li>
     </ul></li>
     <li>Python
     <ul class="org-ul">

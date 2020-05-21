@@ -27,5 +27,6 @@ $ sudo update-rc.d xl2tpd disable
 Choose the model from the {{{a(NVIDIA drivers page,https://www.nvidia.com/Download/index.aspx?lang=en-us)}}} and choose Linux as the OS. On the next page, at the top the version of the driver will appear (i.e 435). Then you can go ahead and install the drivers.
 #+begin_example
 $ sudo apt install nvidia-drivers-335
+$ sudo nvidia-xconfig
 #+end_example
 

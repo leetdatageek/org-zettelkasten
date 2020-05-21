@@ -1,9 +1,15 @@
 #+TITLE: Index
 
+- Clojure
+  - [[file:Clojure/configuration.org][configuration]]
 - Configuration
   - [[file:Configuration/org-publish.org][org-publish Tips & Tricks]]
 - Linux
   - [[file:Linux/configuration.org][Linux Configuration Notes]]
+- Misc
+  - [[file:Misc/til.org][Things I learned today.]]
+- Orgmode
+  - [[file:Orgmode/configuration.org][configuration]]
 - Python
   - [[file:Python/automation.org][AUTOMATION]]
   - [[file:Python/learning.org][Learning Notes]]
