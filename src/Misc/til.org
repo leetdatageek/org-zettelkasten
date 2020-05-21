@@ -1,0 +1,14 @@
+#+STARTUP: indent align hidestars
+#+TITLE: Things I learned today.
+#+DESCRIPTION: Things I learned today.
+#+HTML_HEAD: <meta property="og:title" content="Things I learned today." />
+#+HTML_HEAD: <meta property="og:description" content="Things I learned today." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
+
+* ... how to make a regex capture non greedy                          :regex:
+  :PROPERTIES:
+  :ID:       f082c548-b429-456f-aeff-2195a4948a4b
+  :END:
+  That means that the search stops on the first occurrence.
+  - {{{a(StackOverflow answer,https://stackoverflow.com/a/2503441/5775959)}}}

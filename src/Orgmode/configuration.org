@@ -1,0 +1,3 @@
+* Con la fecha .+2d/4d se implica que hasta que un estado esté pendiente tienen que pasar 2 días, y al menos tiene que registrarse como hecho 4 veces por semana
+* Hacer que la agenda muestre la siguiente ocurencia del hábito
+https://emacs.stackexchange.com/a/16432/29021
