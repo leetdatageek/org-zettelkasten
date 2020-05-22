@@ -6,6 +6,9 @@
 #+HTML_HEAD: <meta property="og:type" content="website" />
 #+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
 * Networking
+:PROPERTIES:
+:ID:       16488cd7-868d-4de0-bbab-c48693e463e0
+:END:
 ** l2tp over IPsec
 workaround to make the VPN work on Ubuntu 19.04, using network-manager-l2tp 1.2.10-1
 #+begin_example
@@ -15,6 +18,9 @@ $ sudo update-rc.d xl2tpd disable
 #+end_example
 
 * Peripherals
+:PROPERTIES:
+:ID:       46870281-a77d-4b1b-bb99-65c3a6c8f1ee
+:END:
 ** Printer
    :PROPERTIES:
    :ID:       99e249f5-69c4-4cc4-9e6f-1515f65f1df2
@@ -23,6 +29,9 @@ $ sudo update-rc.d xl2tpd disable
 {{{a(tutorial,https://linuxhint.com/install_network_printers_linux/)}}}
 
 * Video
+:PROPERTIES:
+:ID:       fdcd7ffe-a498-4d1b-a8d3-346e1c8298b8
+:END:
 ** GPU
 Choose the model from the {{{a(NVIDIA drivers page,https://www.nvidia.com/Download/index.aspx?lang=en-us)}}} and choose Linux as the OS. On the next page, at the top the version of the driver will appear (i.e 435). Then you can go ahead and install the drivers.
 #+begin_example
@@ -30,3 +39,12 @@ $ sudo apt install nvidia-drivers-335
 $ sudo nvidia-xconfig
 #+end_example
 
+* Storage
+:PROPERTIES:
+:ID:       49a458ad-3938-4053-8165-4d0bac75cb00
+:END:
+** WebDav Setup
+:PROPERTIES:
+:ID:       b0f5cea2-1b38-419c-b445-503a32193647
+:END:
+{{{a(Guide by Milosz Galazka,https://blog.sleeplessbeastie.eu/2017/09/04/how-to-mount-webdav-share/)}}}
