@@ -1,3 +1,9 @@
+#+STARTUP: indent align hidestars
+#+TITLE: Notes on Clojure projects configuration and scaffolding, etc.
+#+DESCRIPTION: Notes on Clojure projects configuration and scaffolding, etc.
+#+HTML_HEAD: <meta property="og:title" content="org-publish Tips & Tricks" />
+#+HTML_HEAD: <meta property="og:description" content="Notes on Clojure projects configuration and scaffolding, etc." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
 #+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
 
 * Databases
@@ -12,3 +18,15 @@
       {seancorfield/next.jdbc {:mvn/version "1.0.409"}}
       }
   #+end_src
+
+* Building & Provisioning 
+:PROPERTIES:
+:ID:       158192df-c6d9-451a-90df-6a512f04283c
+:END:
+** Creating jar executable
+{{{a(Refer to the "building executable jars" section,https://oli.me.uk/clojure-projects-from-scratch/)}}}
+** Servicing the app
+:PROPERTIES:
+:ID:       d0cbc00d-6f84-49fb-aee3-c88f7ddca24b
+:END:
+{{{a(Daemonize the app with systemd,https://www.copperwall.dev/2016-08-04-use-services-for-your-web-apps)}}}
