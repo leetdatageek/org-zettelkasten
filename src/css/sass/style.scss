@@ -1,3 +1,5 @@
+// #DCB8CB, #FFF0F8, #F5CEE3, #6DA86C, #CFF5CE;
+
 $color1: #828A95;
 $color2: #CEEAF7;
 $color3: #CCD7E4;
@@ -7,11 +9,31 @@ $color5: #DCB8CB;
 $sidebar-width: 500px;
 $content-padding: 20px;
 $content-width: calc(100% - #{$sidebar-width} - (#{$content-padding} * 2));
-$title-displacement: 25%;
+$title-displacement: 150px;
+@import url('https://fonts.googleapis.com/css2?family=Faustina&family=Oswald&display=swap');
 
 @mixin reset {
     margin: 0px;
     padding: 0px;
+}
+
+@mixin background {
+    background-image: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: auto auto;
+}
+
+@mixin tag-shape {
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    order: 9999;
+}
+
+@mixin stylize($color) {
+    @if $color == green {
+        background: #6DA86C;
+        color: #CFF5CE;
+    }
 }
 
 html, body {
@@ -22,14 +44,17 @@ html, body {
     height: 100%;
     width: 100%;
 
-    background-image: url(../img/background.jpg);
-    background-attachment: fixed;
-    background-size: 100% 100%;
+    //colors
+    background: $color1;
 }
 
 #content {
     @include reset;
-
+    color: #F0FAFF;
+    font-family: "Faustina", serif;
+    font-size: large;
+    text-align: justify;
+    
     & header {
         width: $sidebar-width;
         height: $title-displacement;
@@ -46,43 +71,78 @@ html, body {
             color: $color4;
             filter: drop-shadow(2px 2px 0px #{darken($color5, 40%)})
         }
+        
+        @media only screen and (max-width: 1300px) {
+            position: relative;
+            width: 100%;
+            @include background;
+        }
     }
 
     & #table-of-contents {
         width: $sidebar-width;
         height: 100%;
         position: fixed;
-        padding-top: $title-displacement;
+        padding-top: $title-displacement * 2;
 
-        background: rgb(206,234,247);
-        background: linear-gradient(23deg, rgba(206,234,247,0.6) 27%, rgba(213,201,223,0.4) 100%);
-        
+        @include background;
+
         & h2 {
             display: none;
         }
-
+        
         & #text-table-of-contents {
             margin-top: $title-displacement * -1;
         }
+
+        @media only screen and (max-width: 1300px) {
+            display: none;
+        }
     }
- 
+    
     & > [id^="outline-container"] {
         width: $content-width;
-        margin-left: $sidebar-width;
+        margin-left: $sidebar-width;     
+        @media only screen and (min-width: 1300px) {
+            width: 900px;
+        }
+        @media only screen and (max-width: 1300px) {
+            margin: auto;
+            width: 900px - ($content-padding * 2);
+        }
+        @media only screen and (max-width: 900px) {
+            margin: auto;
+            width: calc(100% - (#{$content-padding} * 2));
+        }
         padding-left: $content-padding;
         padding-right: $content-padding;
 
         display: flex;
         flex-flow: column;
         justify-content: space-between;
+    }
+    
+    & [id^="outline-container"] > :first-child {
+        display: flex;
+        justify-content: flex-start;
+
+        font-family: "Oswald", monospace;
+        color: #FFF0F8;
+        filter: drop-shadow(1px 1px 0px darken(#DCB8CB, 25%));
+
+        &::after {
+            content: " ";
+            white-space: pre;
+        }
         
-        //colors
-        background: $color1;
-        & > h2 {
-            color: $color2;
+        & [class^="section-number"]::after {
+            content: " ";
+            white-space: pre;
         }
     }
 }
+
+
 #postamble, #preamble {
     z-index: 9999;
     width: 100%;
@@ -97,7 +157,13 @@ html, body {
           font-size: medium;
           font-weight: bold;
           margin-top:0; }
-.todo   { font-family: monospace; color: red; }
+
+.todo {
+    font-family: monospace;
+    @include tag-shape;
+    @include stylize(green);
+}
+
 .done   { font-family: monospace; color: green; }
 .priority { font-family: monospace; color: orange; }
 .tag    { background-color: #eee; font-family: monospace;
@@ -110,26 +176,28 @@ html, body {
 .underline { text-decoration: underline; }
 p.verse { margin-left: 3%; }
 pre {
-border: 1px solid #ccc;
-box-shadow: 3px 3px 3px #eee;
-padding: 8pt;
-font-family: monospace;
-overflow: auto;
-margin: 1.2em;
-}
-pre.src {
-position: relative;
-overflow: visible;
-padding-top: 1.2em;
-}
-pre.src:before {
-display: none;
-position: absolute;
-background-color: white;
-top: -10px;
-right: 10px;
-padding: 3px;
-border: 1px solid black;
+    background: #000000;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+    &.src {
+        position: relative;
+        overflow: visible;
+        padding-top: 1.2em;
+        padding-bottom: 1.2em;
+        //color: #000000;
+        &::before {
+            display: none;
+            position: absolute;
+            background-color: white;
+            top: -10px;
+            right: 10px;
+            padding: 3px;
+            border: 1px solid black;
+            color: #000000;
+        }
+    }
 }
 pre.src:hover:before { display: inline;}
 /* Languages per Org manual */

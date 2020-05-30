@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Faustina&family=Oswald&display=swap");
 html, body {
   margin: 0px;
   padding: 0px;
@@ -6,18 +7,20 @@ html, body {
   justify-content: space-between;
   height: 100%;
   width: 100%;
-  background-image: url(../img/background.jpg);
-  background-attachment: fixed;
-  background-size: 100% 100%;
+  background: #828A95;
 }
 
 #content {
   margin: 0px;
   padding: 0px;
+  color: #F0FAFF;
+  font-family: "Faustina", serif;
+  font-size: large;
+  text-align: justify;
 }
 #content header {
   width: 500px;
-  height: 25%;
+  height: 150px;
   position: fixed;
   z-index: 9999;
   display: flex;
@@ -30,19 +33,34 @@ html, body {
   color: #D5C9DF;
   filter: drop-shadow(2px 2px 0px #864266);
 }
+@media only screen and (max-width: 1300px) {
+  #content header {
+    position: relative;
+    width: 100%;
+    background-image: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-size: auto auto;
+  }
+}
 #content #table-of-contents {
   width: 500px;
   height: 100%;
   position: fixed;
-  padding-top: 25%;
-  background: #ceeaf7;
-  background: linear-gradient(23deg, rgba(206, 234, 247, 0.6) 27%, rgba(213, 201, 223, 0.4) 100%);
+  padding-top: 300px;
+  background-image: url(../img/background.jpg);
+  background-attachment: fixed;
+  background-size: auto auto;
 }
 #content #table-of-contents h2 {
   display: none;
 }
 #content #table-of-contents #text-table-of-contents {
-  margin-top: -25%;
+  margin-top: -150px;
+}
+@media only screen and (max-width: 1300px) {
+  #content #table-of-contents {
+    display: none;
+  }
 }
 #content > [id^=outline-container] {
   width: calc(100% - 500px - (20px * 2));
@@ -52,10 +70,38 @@ html, body {
   display: flex;
   flex-flow: column;
   justify-content: space-between;
-  background: #828A95;
 }
-#content > [id^=outline-container] > h2 {
-  color: #CEEAF7;
+@media only screen and (min-width: 1300px) {
+  #content > [id^=outline-container] {
+    width: 900px;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  #content > [id^=outline-container] {
+    margin: auto;
+    width: 860px;
+  }
+}
+@media only screen and (max-width: 900px) {
+  #content > [id^=outline-container] {
+    margin: auto;
+    width: calc(100% - (20px * 2));
+  }
+}
+#content [id^=outline-container] > :first-child {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Oswald", monospace;
+  color: #FFF0F8;
+  filter: drop-shadow(1px 1px 0px #b2638c);
+}
+#content [id^=outline-container] > :first-child::after {
+  content: " ";
+  white-space: pre;
+}
+#content [id^=outline-container] > :first-child [class^=section-number]::after {
+  content: " ";
+  white-space: pre;
 }
 
 #postamble, #preamble {
@@ -78,7 +124,11 @@ html, body {
 
 .todo {
   font-family: monospace;
-  color: red;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  order: 9999;
+  background: #6DA86C;
+  color: #CFF5CE;
 }
 
 .done {
@@ -134,21 +184,19 @@ p.verse {
 }
 
 pre {
-  border: 1px solid #ccc;
-  box-shadow: 3px 3px 3px #eee;
+  background: #000000;
   padding: 8pt;
   font-family: monospace;
   overflow: auto;
   margin: 1.2em;
 }
-
 pre.src {
   position: relative;
   overflow: visible;
   padding-top: 1.2em;
+  padding-bottom: 1.2em;
 }
-
-pre.src:before {
+pre.src::before {
   display: none;
   position: absolute;
   background-color: white;
@@ -156,6 +204,7 @@ pre.src:before {
   right: 10px;
   padding: 3px;
   border: 1px solid black;
+  color: #000000;
 }
 
 pre.src:hover:before {
