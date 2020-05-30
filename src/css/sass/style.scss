@@ -1,4 +1,5 @@
 // #DCB8CB, #FFF0F8, #F5CEE3, #6DA86C, #CFF5CE;
+// #CEEAF7 #F0FAFF #CEE8F5 #A88D6C #F5E3CE 
 
 $color1: #828A95;
 $color2: #CEEAF7;
@@ -153,6 +154,17 @@ a {
         display: flex;
         flex-flow: column;
         justify-content: space-between;
+
+        & .org-ul {
+            list-style: none;
+            
+            & li::before {
+                content: "\2756";
+                white-space: pre;
+                margin-left: -1.3em;
+                position: absolute;
+            }
+        }
     }
     
     & [id^="outline-container"] > :first-child {

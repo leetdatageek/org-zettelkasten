@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Faustina:wght@500&family=Oswald&family=PT+Sans+Narrow&display=swap");
 html, body {
   margin: 0px;
@@ -107,6 +108,15 @@ a:visited {
     margin: auto;
     width: calc(100% - (20px * 2));
   }
+}
+#content > [id^=outline-container] .org-ul {
+  list-style: none;
+}
+#content > [id^=outline-container] .org-ul li::before {
+  content: "❖";
+  white-space: pre;
+  margin-left: -1.3em;
+  position: absolute;
 }
 #content [id^=outline-container] > :first-child {
   display: flex;
