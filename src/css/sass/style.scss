@@ -227,13 +227,13 @@ pre {
         &::before {
             display: none;
             position: fixed;
-            background-color: white;
-            top: .2rem;
-            right: .2rem;
-            padding: 3px;
+            top: .1rem;
+            right: .1rem;
+            padding: 2px;
             border: 1px solid black;
-            color: #000000;
+            color: #FFFFFF;
             z-index: 9999;
+            font-size: smaller;
         }
     }
 }
