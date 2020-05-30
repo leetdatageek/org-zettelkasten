@@ -10,7 +10,8 @@ $sidebar-width: 500px;
 $content-padding: 20px;
 $content-width: calc(100% - #{$sidebar-width} - (#{$content-padding} * 2));
 $title-displacement: 150px;
-@import url('https://fonts.googleapis.com/css2?family=Faustina&family=Oswald&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Faustina:wght@500&family=Oswald&family=PT+Sans+Narrow&display=swap');
 
 @mixin reset {
     margin: 0px;
@@ -24,15 +25,24 @@ $title-displacement: 150px;
 }
 
 @mixin tag-shape {
-    padding: 0.2rem;
+    font-family: "PT Sans Narrow", monospace;
+    font-size: initial;
+    font-weight: bolder;
+    padding: 0px .2em 0px .2em;
     border-radius: 0.2rem;
     order: 9999;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    height: max-content;
 }
 
 @mixin stylize($color) {
     @if $color == green {
         background: #6DA86C;
         color: #CFF5CE;
+        text-shadow: 1px 1px 0px #{darken(#6DA86C, 50%)};
+        filter: drop-shadow(0px 1px .5px #CFF5CE);
     }
 }
 
@@ -48,11 +58,23 @@ html, body {
     background: $color1;
 }
 
+a {
+    text-decoration: none;
+    color: #F5E3CE;
+    text-shadow: .3px .3px 0px #{darken(#A88D6C, 20%)};
+
+    &:visited {
+        color: darken(#F5E3CE, 10%);
+    }
+
+}
+
 #content {
     @include reset;
     color: #F0FAFF;
+    text-shadow: .3px .3px 0px #{darken(#F0FAFF, 90%)};
     font-family: "Faustina", serif;
-    font-size: large;
+    font-size: larger;
     text-align: justify;
     
     & header {
@@ -86,13 +108,24 @@ html, body {
         padding-top: $title-displacement * 2;
 
         @include background;
-
+        filter: drop-shadow(1px 0px 4px #{darken($color1, 25%)});
         & h2 {
             display: none;
         }
         
         & #text-table-of-contents {
             margin-top: $title-displacement * -1;
+            & > ul,ol {
+                list-style: none;
+
+                & > li {
+                    padding: .3em;
+                }
+
+                & li {
+                    list-style: none;
+                }
+            }
         }
 
         @media only screen and (max-width: 1300px) {
@@ -125,10 +158,11 @@ html, body {
     & [id^="outline-container"] > :first-child {
         display: flex;
         justify-content: flex-start;
-
+        align-items: flex-start;
+        margin-bottom: 0px;
         font-family: "Oswald", monospace;
         color: #FFF0F8;
-        filter: drop-shadow(1px 1px 0px darken(#DCB8CB, 25%));
+        text-shadow: 1px 1px 0px #{darken(#DCB8CB, 25%)};
 
         &::after {
             content: " ";
@@ -179,23 +213,27 @@ pre {
     background: #000000;
     padding: 8pt;
     font-family: monospace;
-    overflow: auto;
+    overflow: scroll;
+    scrollbar-width: none;
+    text-overflow: ellipsis;
     margin: 1.2em;
+    border-radius: 4px;
+    filter: drop-shadow(0px 1px 1px #{darken($color1, 35%)});
     &.src {
         position: relative;
-        overflow: visible;
         padding-top: 1.2em;
         padding-bottom: 1.2em;
         //color: #000000;
         &::before {
             display: none;
-            position: absolute;
+            position: fixed;
             background-color: white;
-            top: -10px;
-            right: 10px;
+            top: .2rem;
+            right: .2rem;
             padding: 3px;
             border: 1px solid black;
             color: #000000;
+            z-index: 9999;
         }
     }
 }
