@@ -40,7 +40,7 @@ a:visited {
 }
 #content header .title {
   align-self: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
   color: #D5C9DF;
   filter: drop-shadow(2px 2px 0px #864266);
 }
@@ -84,10 +84,10 @@ a:visited {
   }
 }
 #content > [id^=outline-container] {
-  width: calc(100% - 500px - (20px * 2));
+  width: calc(100% - 500px - (30px * 2));
   margin-left: 500px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   display: flex;
   flex-flow: column;
   justify-content: space-between;
@@ -100,13 +100,13 @@ a:visited {
 @media only screen and (max-width: 1300px) {
   #content > [id^=outline-container] {
     margin: auto;
-    width: 860px;
+    width: 840px;
   }
 }
 @media only screen and (max-width: 900px) {
   #content > [id^=outline-container] {
     margin: auto;
-    width: calc(100% - (20px * 2));
+    width: calc(100% - (30px * 2));
   }
 }
 #content > [id^=outline-container] .org-ul {
