@@ -1,58 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-05-30 Sat 03:03 -->
+<!-- 2020-06-03 Wed 15:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>&lrm;</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="leabravo">
+<meta name="author" content="John Doe">
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -61,21 +39,21 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org1202d8a">1. Software Solution Design</a>
+<li><a href="#orgd9ac96e">1. Software Solution Design</a>
 <ul>
-<li><a href="#org3abc575">1.1. Analyzing the problem</a>
+<li><a href="#orga699118">1.1. Analyzing the problem</a>
 <ul>
-<li><a href="#org204a056">1.1.1. Example</a></li>
+<li><a href="#org2c6b99c">1.1.1. Example</a></li>
 </ul>
 </li>
-<li><a href="#org64651e0">1.2. But it's not THAT simple&#x2026;</a></li>
+<li><a href="#orgaab4903">1.2. But it&rsquo;s not THAT simple&#x2026;</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org1202d8a" class="outline-2">
-<h2 id="org1202d8a"><span class="section-number-2">1</span> Software Solution Design</h2>
+<div id="outline-container-orgd9ac96e" class="outline-2">
+<h2 id="orgd9ac96e"><span class="section-number-2">1</span> Software Solution Design</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 Since the design of a solution resides in the context of creativity and therefore two or more distinct solutions could apply to the same problem we still can notice that they all consist of at least the following two stages:
@@ -86,8 +64,8 @@ Since the design of a solution resides in the context of creativity and therefor
 </ul>
 </div>
 
-<div id="outline-container-org3abc575" class="outline-3">
-<h3 id="org3abc575"><span class="section-number-3">1.1</span> Analyzing the problem</h3>
+<div id="outline-container-orga699118" class="outline-3">
+<h3 id="orga699118"><span class="section-number-3">1.1</span> Analyzing the problem</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 While it seems pretty complicated to find a good solution to a problem if we let our mind ramble on with uncanny supositions, narrowing the context of it to the machine level it makes the task of coming up with a strategy a much easier endeavor. So much that we just need three things to keep in mind:
@@ -102,11 +80,11 @@ While it seems pretty complicated to find a good solution to a problem if we let
 </ul>
 </div>
 
-<div id="outline-container-org204a056" class="outline-4">
-<h4 id="org204a056"><span class="section-number-4">1.1.1</span> Example</h4>
+<div id="outline-container-org2c6b99c" class="outline-4">
+<h4 id="org2c6b99c"><span class="section-number-4">1.1.1</span> Example</h4>
 <div class="outline-text-4" id="text-1-1-1">
 <p>
-Determine an employee's salary given it varies according to the hours worked during the month.
+Determine an employee&rsquo;s salary given it varies according to the hours worked during the month.
 </p>
 
 <ul class="org-ul">
@@ -118,8 +96,8 @@ Determine an employee's salary given it varies according to the hours worked dur
 </div>
 </div>
 
-<div id="outline-container-org64651e0" class="outline-3">
-<h3 id="org64651e0"><span class="section-number-3">1.2</span> But it's not THAT simple&#x2026;</h3>
+<div id="outline-container-orgaab4903" class="outline-3">
+<h3 id="orgaab4903"><span class="section-number-3">1.2</span> But it&rsquo;s not THAT simple&#x2026;</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 The calculation of the salary may seem trivial at first sight but when whe think about a data-first/solution-later approach we remember that we must know the domain of the data. How can we be completely sure that we know the values that the salary can take? A single error in this calculation can leave a family with no christmas presents or get an accounting employee fired. Some qestions we may ask are:
@@ -132,7 +110,7 @@ The calculation of the salary may seem trivial at first sight but when whe think
 <li>etc.</li>
 </ul>
 <p>
-Most of the time you won't be the one who knows most of the answers so the logical decision to make is to ask them to somebody with <b>domain knowledge</b> on the subject.
+Most of the time you won&rsquo;t be the one who knows most of the answers so the logical decision to make is to ask them to somebody with <b>domain knowledge</b> on the subject.
 </p>
 
 <blockquote>
@@ -145,9 +123,8 @@ You cannot know the domain of data unless you have domain knowledge.
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-05-30 Sat 03:03</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: John Doe</p>
+<p class="date">Created: 2020-06-03 Wed 15:39</p>
 </div>
 </body>
 </html>

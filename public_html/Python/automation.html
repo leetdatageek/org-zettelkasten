@@ -1,60 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-05-30 Sat 03:03 -->
+<!-- 2020-06-03 Wed 15:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>AUTOMATION</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="leabravo">
+<meta name="author" content="John Doe">
 <meta name="description" content="selenium webdriver python problems image processing threading configuration zettelkasten leetdatageek"
 >
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -65,13 +43,13 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org99cb671">1. Selenium &amp; WebDriver configuration</a></li>
+<li><a href="#org32bb49b">1. Selenium &amp; WebDriver configuration</a></li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org99cb671" class="outline-2">
-<h2 id="org99cb671"><span class="section-number-2">1</span> Selenium &amp; WebDriver configuration</h2>
+<div id="outline-container-org32bb49b" class="outline-2">
+<h2 id="org32bb49b"><span class="section-number-2">1</span> Selenium &amp; WebDriver configuration</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 If you want to work with automation - mainly in WSL or any other GNU/Linux system - you may not want to deal with a lot of windows popping up everywhere.
@@ -85,10 +63,10 @@ If you want to work with automation - mainly in WSL or any other GNU/Linux syste
 <a href="https://emacs.stackexchange.com/questions/30595/how-to-org-capture-at-current-location">insert at current location</a>
 </p>
 <div class="org-src-container">
-<pre class="src src-shell">sudo apt-get install firefox-esr
-wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
-tar -xvf geckodriver-v0.26.0-linux64.tar.gz
-chmod +x geckodriver
+<pre class="src src-shell">  <span style="color: #ECBE7B;">sudo</span> apt-get install firefox-esr
+  wget https://github.com/mozilla/geckodriver/releases/download/v0.26.0/geckodriver-v0.26.0-linux64.tar.gz
+  tar -xvf geckodriver-v0.26.0-linux64.tar.gz
+  <span style="color: #ECBE7B;">chmod</span> +x geckodriver
 </pre>
 </div>
 
@@ -97,28 +75,27 @@ Copy the file to /bin or put the script in /usr/bin or in your custom folder and
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #fb4933;">from</span> selenium <span style="color: #fb4933;">import</span> webdriver
-<span style="color: #fb4933;">from</span> selenium.webdriver.firefox.options <span style="color: #fb4933;">import</span> Options
-<span style="color: #fb4933;">import</span> os
-<span style="color: #fb4933;">import</span> time
-
-<span style="color: #83a598;">options</span> = Options()
-<span style="color: #83a598;">options.headless</span> = <span style="color: #d3869b;">True</span> <span style="color: #7c6f64;"># </span><span style="color: #7c6f64;">Important for CLI work</span>
-<span style="color: #83a598;">driver</span> = webdriver.Firefox(options=options)
-driver.get(<span style="color: #b8bb26;">"http://www.google.com"</span>)
-time.sleep(1)
-<span style="color: #fb4933;">assert</span> <span style="color: #b8bb26;">"google - Google Search"</span> <span style="color: #fb4933;">in</span> driver.title
-<span style="color: #fb4933;">print</span>(driver.title)
-driver.<span style="color: #d3869b;">quit</span>()
+<pre class="src src-python">  <span style="color: #51afef;">from</span> selenium <span style="color: #51afef;">import</span> webdriver
+  <span style="color: #51afef;">from</span> selenium.webdriver.firefox.options <span style="color: #51afef;">import</span> Options
+  <span style="color: #51afef;">import</span> os
+  <span style="color: #51afef;">import</span> time
+  
+  <span style="color: #dcaeea;">options</span> = Options()
+  <span style="color: #dcaeea;">options.headless</span> = <span style="color: #a9a1e1;">True</span> <span style="color: #5B6268;"># </span><span style="color: #5B6268;">Important for CLI work</span>
+  <span style="color: #dcaeea;">driver</span> = webdriver.Firefox(options=options)
+  driver.get(<span style="color: #98be65;">"http://www.google.com"</span>)
+  time.sleep(<span style="color: #da8548; font-weight: bold;">1</span>)
+  <span style="color: #51afef;">assert</span> <span style="color: #98be65;">"google - Google Search"</span> <span style="color: #51afef;">in</span> driver.title
+  <span style="color: #51afef;">print</span>(driver.title)
+  driver.<span style="color: #a9a1e1;">quit</span>()
 </pre>
 </div>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-05-30 Sat 03:03</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: John Doe</p>
+<p class="date">Created: 2020-06-03 Wed 15:39</p>
 </div>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-05-30 Sat 03:03 -->
+<!-- 2020-06-03 Wed 15:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>cmd Tips &amp; Tricks</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="leabravo">
+<meta name="author" content="John Doe">
 <meta name="description" content="Tips &amp; Tricks for making your life easier when publishing blogs with emacs on minimum steroids."
 >
 <meta property="og:title" content="cmd Tips & Tricks" />
@@ -14,50 +14,28 @@
 <meta property="og:type" content="website" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -68,22 +46,22 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge59fe3f">1. Command Line</a>
+<li><a href="#org73edbbc">1. Command Line</a>
 <ul>
-<li><a href="#org099c80b">1.1. Unzipping files modified in a specific date</a></li>
-<li><a href="#orgbf574ed">1.2. AWS RDS (Postgres)</a></li>
+<li><a href="#org47fba51">1.1. Unzipping files modified in a specific date</a></li>
+<li><a href="#orgad5e081">1.2. AWS RDS (Postgres)</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-orge59fe3f" class="outline-2">
-<h2 id="orge59fe3f"><span class="section-number-2">1</span> Command Line</h2>
+<div id="outline-container-org73edbbc" class="outline-2">
+<h2 id="org73edbbc"><span class="section-number-2">1</span> Command Line</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org099c80b" class="outline-3">
-<h3 id="org099c80b"><span class="section-number-3">1.1</span> Unzipping files modified in a specific date</h3>
+<div id="outline-container-org47fba51" class="outline-3">
+<h3 id="org47fba51"><span class="section-number-3">1.1</span> Unzipping files modified in a specific date</h3>
 <div class="outline-text-3" id="text-1-1">
 <div class="org-src-container">
 <pre class="src src-cmd">ls -la | awk 'NR&gt;2 {if($7==26 &amp;&amp; $6=="Mar") print "./"$9;}' | xargs -n1 unzip -d ../cases/week_03/
@@ -92,15 +70,15 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-orgbf574ed" class="outline-3">
-<h3 id="orgbf574ed"><span class="section-number-3">1.2</span> AWS RDS (Postgres)</h3>
+<div id="outline-container-orgad5e081" class="outline-3">
+<h3 id="orgad5e081"><span class="section-number-3">1.2</span> AWS RDS (Postgres)</h3>
 <div class="outline-text-3" id="text-1-2">
 <p>
 In the prompt to crate a new database <b><b>I think</b></b> the prompt asked me for a database name, but in reality what the web app refers to is the server name or at least an identifier within AWS. The sefault database that is created has the <b><b>postgres</b></b> name, and if you provide no argument specifying it to the psql utility it uses your username as the dbname which could be the default - <b><b>postgres</b></b> - but using a different one seems more secure to me.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-shell">psql -h &lt;server_name&gt;.{secret}.us-west-2.rds.amazonaws.com -U leetdatageek --password --dbname=postgres
+<pre class="src src-shell">psql -h &lt;server_name&gt;.<span style="color: #51afef;">{</span>secret<span style="color: #51afef;">}</span>.us-west-2.rds.amazonaws.com -U leetdatageek --password --dbname=postgres
 </pre>
 </div>
 </div>
@@ -108,9 +86,8 @@ In the prompt to crate a new database <b><b>I think</b></b> the prompt asked me 
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-05-30 Sat 03:03</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: John Doe</p>
+<p class="date">Created: 2020-06-03 Wed 15:39</p>
 </div>
 </body>
 </html>

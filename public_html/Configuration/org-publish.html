@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-05-30 Sat 03:03 -->
+<!-- 2020-06-03 Wed 15:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>org-publish Tips &amp; Tricks</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="leabravo">
+<meta name="author" content="John Doe">
 <meta name="description" content="Tips &amp; Tricks for making your life easier when publishing blogs with emacs on minimum steroids."
 >
 <meta property="og:title" content="org-publish Tips & Tricks" />
@@ -14,50 +14,28 @@
 <meta property="og:type" content="website" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -68,25 +46,25 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org857d863">1. Setting up the environment</a></li>
-<li><a href="#orgeef1bb2">2. <span class="todo TODO">TODO</span> Template Publicación</a></li>
-<li><a href="#org5a0108f">3. AAAA</a>
+<li><a href="#org73c783e">1. Setting up the environment</a></li>
+<li><a href="#org3235ba0">2. <span class="todo TODO">TODO</span> Template Publicación</a></li>
+<li><a href="#org026f482">3. AAAA</a>
 <ul>
-<li><a href="#orgb7c60aa">3.1. Initial Problem</a></li>
-<li><a href="#org6712ca9">3.2. The Solution</a></li>
+<li><a href="#orgd3c289a">3.1. Initial Problem</a></li>
+<li><a href="#orgc72c24e">3.2. The Solution</a></li>
 </ul>
 </li>
-<li><a href="#org47d82a4">4. SEO Improvements</a>
+<li><a href="#orgd8de265">4. SEO Improvements</a>
 <ul>
-<li><a href="#org62b8933">4.1. Capturing links</a></li>
+<li><a href="#org95cb637">4.1. Capturing links</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
 
-<div id="outline-container-org857d863" class="outline-2">
-<h2 id="org857d863"><span class="section-number-2">1</span> Setting up the environment</h2>
+<div id="outline-container-org73c783e" class="outline-2">
+<h2 id="org73c783e"><span class="section-number-2">1</span> Setting up the environment</h2>
 <div class="outline-text-2" id="text-1">
 <ul class="org-ul">
 <li><a href="https://orgmode.org/manual/In_002dbuffer-Settings.html">https://orgmode.org/manual/In_002dbuffer-Settings.html</a></li>
@@ -95,25 +73,25 @@ for the JavaScript code in this tag.
 </ul>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(add-to-list 'package-archives
-    '(<span style="color: #b8bb26;">"org"</span> . <span style="color: #b8bb26;">"https://orgmode.org/elpa/"</span>) t)
-(add-to-list 'package-archives
-    '(<span style="color: #b8bb26;">"org-plus-contrib"</span> . <span style="color: #b8bb26;">"https://orgmode.org/elpa/"</span>) t)
+<pre class="src src-elisp"><span style="color: #51afef;">(</span><span style="color: #c678dd;">add-to-list</span> <span style="color: #51afef;">'</span><span style="color: #dcaeea;">package-archives</span>
+    <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"org"</span> . <span style="color: #98be65;">"https://orgmode.org/elpa/"</span><span style="color: #c678dd;">)</span> t<span style="color: #51afef;">)</span>
+<span style="color: #51afef;">(</span><span style="color: #c678dd;">add-to-list</span> <span style="color: #51afef;">'</span><span style="color: #dcaeea;">package-archives</span>
+    <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">"org-plus-contrib"</span> . <span style="color: #98be65;">"https://orgmode.org/elpa/"</span><span style="color: #c678dd;">)</span> t<span style="color: #51afef;">)</span>
 
-(<span style="color: #fb4933;">unless</span> (package-installed-p 'org-plus-contrib)
-  (package-refresh-contents)
-  (package-install 'org-plus-contrib))
-(<span style="color: #fb4933;">require</span> '<span style="color: #d3869b;">org-plus-contrib</span>)
+<span style="color: #51afef;">(</span><span style="color: #51afef;">unless</span> <span style="color: #c678dd;">(</span><span style="color: #c678dd;">package-installed-p</span> <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">org-plus-contrib</span><span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #c678dd;">package-refresh-contents</span><span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #c678dd;">package-install</span> <span style="color: #51afef;">'</span><span style="color: #ECBE7B;">org-plus-contrib</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
+<span style="color: #51afef;">(</span><span style="color: #a9a1e1;">require</span> <span style="color: #51afef;">'</span><span style="color: #a9a1e1;">org-plus-contrib</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
 </div>
 </div>
 
-<div id="outline-container-orgeef1bb2" class="outline-2">
-<h2 id="orgeef1bb2"><span class="section-number-2">2</span> <span class="todo tTODO">TODO</span> Template Publicación</h2>
+<div id="outline-container-org3235ba0" class="outline-2">
+<h2 id="org3235ba0"><span class="section-number-2">2</span> <span class="todo tTODO">TODO</span> Template Publicación</h2>
 <div class="outline-text-2" id="text-2">
 <ul class="org-ul">
-<li>Un directorio por <a id="orgca86231"></a></li>
+<li>Un directorio por <a id="orgf536e3a"></a></li>
 <li>Cada headline con un identificador <a href="foo.html#custom-id">foo.html#custom-id</a></li>
 <li>Con deft <a href="https://jblevins.org/projects/deft/">https://jblevins.org/projects/deft/</a> buscar dentro de las carpeta del proyecto los temas asociados y copiar el ID
 <ul class="org-ul">
@@ -123,16 +101,16 @@ for the JavaScript code in this tag.
 </div>
 </div>
 
-<div id="outline-container-org5a0108f" class="outline-2">
-<h2 id="org5a0108f"><span class="section-number-2">3</span> AAAA</h2>
+<div id="outline-container-org026f482" class="outline-2">
+<h2 id="org026f482"><span class="section-number-2">3</span> AAAA</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-orgb7c60aa" class="outline-3">
-<h3 id="orgb7c60aa"><span class="section-number-3">3.1</span> Initial Problem</h3>
+<div id="outline-container-orgd3c289a" class="outline-3">
+<h3 id="orgd3c289a"><span class="section-number-3">3.1</span> Initial Problem</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 The elements wrapping the headline content were not contained inside a parent div/section, making it pretty hard to organize the content in the page since they kept overlapping each other using grid and flexbox was impossible due to them not having a parent html element.
-The TOC needed to grow in size in relation to the content of the page. The logical solution would be to use flexbox but since we already discarded that as an option I wah stuck with traditional "box" manipulation or css grid.
+The TOC needed to grow in size in relation to the content of the page. The logical solution would be to use flexbox but since we already discarded that as an option I wah stuck with traditional &ldquo;box&rdquo; manipulation or css grid.
 </p>
 
 <pre class="example">
@@ -151,19 +129,19 @@ The TOC needed to grow in size in relation to the content of the page. The logic
 </div>
 </div>
 
-<div id="outline-container-org6712ca9" class="outline-3">
-<h3 id="org6712ca9"><span class="section-number-3">3.2</span> The Solution</h3>
+<div id="outline-container-orgc72c24e" class="outline-3">
+<h3 id="orgc72c24e"><span class="section-number-3">3.2</span> The Solution</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
-The template needs to have three rows and two columns but the content at [1][1] is forced into position so we don't need to reference it by name. 
+The template needs to have three rows and two columns but the content at [1][1] is forced into position so we don&rsquo;t need to reference it by name. 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #fabd2f;">#content </span>{
-    <span style="color: #83a598;">display</span>: inline-grid;
-    <span style="color: #83a598;">grid-template-areas</span>: <span style="color: #b8bb26;">'toc header'</span>
-        <span style="color: #b8bb26;">'toc _'</span>
-        <span style="color: #b8bb26;">'toc footer'</span>;
+<pre class="src src-css"><span style="color: #51afef;">#content </span>{
+    <span style="color: #98be65;">display</span>: inline-grid;
+    <span style="color: #98be65;">grid-template-areas</span>: <span style="color: #98be65;">'toc header'</span>
+        <span style="color: #98be65;">'toc _'</span>
+        <span style="color: #98be65;">'toc footer'</span>;
 }
 </pre>
 </div>
@@ -173,21 +151,21 @@ The header is positioned using the grid-area name
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #fabd2f;">header </span>{
-    <span style="color: #83a598;">grid-area</span>: header;
-    <span style="color: #83a598;">width</span>: auto;
-} <span style="color: #7c6f64;">/* </span><span style="color: #7c6f64;">document title </span><span style="color: #7c6f64;">*/</span>
+<pre class="src src-css"><span style="color: #51afef;">header </span>{
+    <span style="color: #98be65;">grid-area</span>: header;
+    <span style="color: #98be65;">width</span>: auto;
+} <span style="color: #5B6268;">/* </span><span style="color: #5B6268;">document title </span><span style="color: #5B6268;">*/</span>
 </pre>
 </div>
 
 <p>
-The content within the headlines in the org file has to be forced into position with the <code>grid-column</code> attribute and since the amount of headlines that each page has is variable we need to use the grid-row attribute and set it to "auto".
+The content within the headlines in the org file has to be forced into position with the <code>grid-column</code> attribute and since the amount of headlines that each page has is variable we need to use the grid-row attribute and set it to &ldquo;auto&rdquo;.
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #fabd2f;">[class^=</span><span style="color: #b8bb26;">"outline-"</span><span style="color: #fabd2f;">] </span>{
-    <span style="color: #83a598;">grid-row</span>: auto;
-    <span style="color: #83a598;">grid-column</span>: 2;
+<pre class="src src-css"><span style="color: #51afef;">[class^=</span><span style="color: #98be65;">"outline-"</span><span style="color: #51afef;">] </span>{
+    <span style="color: #98be65;">grid-row</span>: auto;
+    <span style="color: #98be65;">grid-column</span>: <span style="color: #da8548; font-weight: bold;">2</span>;
 }
 </pre>
 </div>
@@ -197,9 +175,9 @@ The TOC can be positioned in the traditional way but the bottom of it should rea
 </p>
 
 <div class="org-src-container">
-<pre class="src src-css"><span style="color: #fabd2f;">#table-of-contents </span>{
-    <span style="color: #83a598;">grid-area</span>: toc;
-    <span style="color: #83a598;">grid-row-end</span>: 999;
+<pre class="src src-css"><span style="color: #51afef;">#table-of-contents </span>{
+    <span style="color: #98be65;">grid-area</span>: toc;
+    <span style="color: #98be65;">grid-row-end</span>: <span style="color: #da8548; font-weight: bold;">999</span>;
 }
 </pre>
 </div>
@@ -209,46 +187,46 @@ The syntax highlighting capabilities are available once you install the htmlize 
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">(<span style="color: #fb4933;">use-package</span> <span style="color: #d3869b;">htmlize</span>
-  <span style="color: #fe8019;">:init</span>
-  <span style="color: #fe8019;">:ensure</span> t)
+<pre class="src src-elisp"><span style="color: #51afef;">(</span><span style="color: #51afef;">use-package</span> htmlize
+  <span style="color: #c678dd;">:init</span>
+  <span style="color: #c678dd;">:ensure</span> t<span style="color: #51afef;">)</span>
 </pre>
 </div>
 </div>
 </div>
 </div>
 
-<div id="outline-container-org47d82a4" class="outline-2">
-<h2 id="org47d82a4"><span class="section-number-2">4</span> SEO Improvements</h2>
+<div id="outline-container-orgd8de265" class="outline-2">
+<h2 id="orgd8de265"><span class="section-number-2">4</span> SEO Improvements</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-org62b8933" class="outline-3">
-<h3 id="org62b8933"><span class="section-number-3">4.1</span> Capturing links</h3>
+<div id="outline-container-org95cb637" class="outline-3">
+<h3 id="org95cb637"><span class="section-number-3">4.1</span> Capturing links</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 Linking to a website or piece of content would normally increase that website’s domain authority. But with a nofollow tag, it won’t.
 </p>
 
 <p>
-Unfortunately using the #+ATTR<sub>HTML</sub> tag would wrap the hyperlink in a &lt;p&gt; element, as it's described in <a href='https://www.reddit.com/r/emacsorg/comments/5afnjy/emacs_org_html_export_attr_html_for_inline_tags/' rel='external nofollow'>this old reddit thread</a> however in the org manual I found out that you can <a href='https://orgmode.org/org.html#Quoting-HTML-tags' rel='external nofollow'>quote HTML tags</a>
+Unfortunately using the #+ATTR<sub>HTML</sub> tag would wrap the hyperlink in a &lt;p&gt; element, as it&rsquo;s described in <a href='https://www.reddit.com/r/emacsorg/comments/5afnjy/emacs_org_html_export_attr_html_for_inline_tags/' rel='external nofollow'>this old reddit thread</a> however in the org manual I found out that you can <a href='https://orgmode.org/org.html#Quoting-HTML-tags' rel='external nofollow'>quote HTML tags</a>
 </p>
 
 <p>
 Once we set up a way for <a href='https://emacs.stackexchange.com/a/30598' rel='external nofollow'>capturing our templates in place</a> the next way is to set up the template using the inline html trick and <a href='https://orgmode.org/manual/Template-expansion.html#Template-expansion' rel='external nofollow'>template expansion</a> alongside <a href='https://orgmode.org/manual/Macro-Replacement.html' rel='external nofollow'>macro replacement</a>.
 </p>
 <div class="org-src-container">
-<pre class="src src-elisp"><span style="color: #7c6f64;">;; </span><span style="color: #7c6f64;">marcos are pre-processed... dah!</span>
-#+MACRO: a @@html:&lt;a href='$2' rel='external nofollow'&gt;$1&lt;/a&gt;@@
+<pre class="src src-elisp"><span style="color: #5B6268;">;; </span><span style="color: #5B6268;">marcos are pre-processed... dah!</span>
+#+MACRO: a @@html:&lt;a href=<span style="color: #51afef;">'</span><span style="color: #ECBE7B;">$2</span><span style="color: #51afef;">'</span> <span style="color: #ECBE7B;">rel=</span><span style="color: #51afef;">'</span><span style="color: #ECBE7B;">external</span> nofollow<span style="color: #51afef;">'</span><span style="color: #ECBE7B;">&gt;$1&lt;/a&gt;@@</span>
 
-(<span style="color: #fb4933;">defun</span> <span style="color: #fabd2f;">org-capture-at-point</span> ()
-  <span style="color: #b8bb26;">"Insert an org capture template at point."</span>
-  (<span style="color: #fb4933;">interactive</span>)
-  (org-capture 0))
+<span style="color: #51afef;">(</span><span style="color: #51afef;">defun</span> <span style="color: #c678dd;">org-capture-at-point</span> <span style="color: #c678dd;">()</span>
+  <span style="color: #83898d;">"Insert an org capture template at point."</span>
+  <span style="color: #c678dd;">(</span><span style="color: #51afef;">interactive</span><span style="color: #c678dd;">)</span>
+  <span style="color: #c678dd;">(</span><span style="color: #c678dd;">org-capture</span> <span style="color: #da8548; font-weight: bold;">0</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
 
-(global-set-key (kbd <span style="color: #b8bb26;">"C-c c"</span>) #'org-capture-at-point)
+<span style="color: #51afef;">(</span><span style="color: #c678dd;">global-set-key</span> <span style="color: #c678dd;">(</span><span style="color: #c678dd;">kbd</span> <span style="color: #98be65;">"C-c c"</span><span style="color: #c678dd;">)</span> <span style="color: #51afef;">#'</span><span style="color: #ECBE7B;">org-capture-at-point</span><span style="color: #51afef;">)</span>
 
-(<span style="color: #fb4933;">setq</span> org-capture-templates
-      '((<span style="color: #b8bb26;">"l"</span> <span style="color: #b8bb26;">"Link nofollow"</span> plain (file <span style="color: #b8bb26;">""</span>) <span style="color: #b8bb26;">"{{{a(%?,%x)}}}"</span>)))
+<span style="color: #51afef;">(</span><span style="color: #51afef;">setq</span> <span style="color: #dcaeea;">org-capture-templates</span>
+      <span style="color: #51afef;">'</span><span style="color: #c678dd;">(</span><span style="color: #98be65;">(</span><span style="color: #98be65;">"l"</span> <span style="color: #98be65;">"Link nofollow"</span> plain <span style="color: #51afef;">(</span>file <span style="color: #98be65;">""</span><span style="color: #51afef;">)</span> <span style="color: #98be65;">"{{{a(%?,%x)}}}"</span><span style="color: #98be65;">)</span><span style="color: #c678dd;">)</span><span style="color: #51afef;">)</span>
 </pre>
 </div>
 
@@ -257,9 +235,9 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </p>
 
 <div class="org-src-container">
-<pre class="src src-elisp">#+HTML_HEAD: &lt;meta property=<span style="color: #b8bb26;">"og:title"</span> content=<span style="color: #b8bb26;">"Title"</span> /&gt;
-#+HTML_HEAD: &lt;meta property=<span style="color: #b8bb26;">"og:description"</span> content=<span style="color: #b8bb26;">"My Site Description"</span> /&gt;
-#+HTML_HEAD: &lt;meta property=<span style="color: #b8bb26;">"og:type"</span> content=<span style="color: #b8bb26;">"website"</span> /&gt;
+<pre class="src src-elisp">#+HTML_HEAD: &lt;meta property=<span style="color: #98be65;">"og:title"</span> content=<span style="color: #98be65;">"Title"</span> /&gt;
+#+HTML_HEAD: &lt;meta property=<span style="color: #98be65;">"og:description"</span> content=<span style="color: #98be65;">"My Site Description"</span> /&gt;
+#+HTML_HEAD: &lt;meta property=<span style="color: #98be65;">"og:type"</span> content=<span style="color: #98be65;">"website"</span> /&gt;
 </pre>
 </div>
 
@@ -271,9 +249,8 @@ Another crucial part is to set up the Open Graph Tags so your content gets share
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-05-30 Sat 03:03</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: John Doe</p>
+<p class="date">Created: 2020-06-03 Wed 15:39</p>
 </div>
 </body>
 </html>

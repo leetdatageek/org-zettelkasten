@@ -10,8 +10,7 @@
   :PROPERTIES:
   :ID:       be30ec8a-cf83-4d91-8b86-b669f22ba03f
   :END:
-  Follow the steps for {{{a(working with local jars,https://clojure.org/guides/deps_and_cli#local_jar)}}} and then 
-{{{a(next.jdbc config,https://github.com/seancorfield/next-jdbc/blob/master/doc/getting-started.md#an-example-repl-session)}}}
+  Follow the steps for {{{a(working with local jars,https://clojure.org/guides/deps_and_cli#local_jar)}}} and then {{{a(next.jdbc config,https://github.com/seancorfield/next-jdbc/blob/master/doc/getting-started.md#an-example-repl-session)}}}
   #+begin_src clojure
   {:deps
       {db/driver {:local/root "/path/to/db/driver.jar"}}

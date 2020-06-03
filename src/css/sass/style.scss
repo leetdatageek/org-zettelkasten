@@ -7,7 +7,7 @@ $color3: #CCD7E4;
 $color4: #D5C9DF;
 $color5: #DCB8CB;
 
-$sidebar-width: 500px;
+$sidebar-width: 400px;
 $content-padding: 30px;
 $content-width: calc(100% - #{$sidebar-width} - (#{$content-padding} * 2));
 $title-displacement: 150px;
@@ -22,7 +22,8 @@ $title-displacement: 150px;
 @mixin background {
     background-image: url(../img/background.jpg);
     background-attachment: fixed;
-    background-size: auto auto;
+    background-size: 100% auto;
+    background-color: white;
 }
 
 @mixin tag-shape {
@@ -36,6 +37,8 @@ $title-displacement: 150px;
     flex-direction: column;
     justify-content: center;
     height: max-content;
+    display: table-cell;
+    vertical-align: middle;
 }
 
 @mixin stylize($color) {
@@ -86,11 +89,14 @@ a {
         
         display: flex;
         flex-direction: column;
-        justify-content: flex-end;
+        justify-content: center;
         & .title  {
             align-self: center;
-            margin-bottom: $content-padding * 2;
+            text-align: center;
+            margin: 0px;
+            padding: 0px;
 
+            font-family: "Faustina", serif;
             color: $color4;
             filter: drop-shadow(2px 2px 0px #{darken($color5, 40%)})
         }
@@ -99,6 +105,7 @@ a {
             position: relative;
             width: 100%;
             @include background;
+            filter: drop-shadow(0px 1px 4px #{darken($color1, 25%)});
         }
     }
 
@@ -107,7 +114,8 @@ a {
         height: 100%;
         position: fixed;
         padding-top: $title-displacement * 2;
-
+        font-family: "Oswald", monospace;
+        font-size: larger;
         @include background;
         filter: drop-shadow(1px 0px 4px #{darken($color1, 25%)});
         & h2 {
@@ -118,9 +126,9 @@ a {
             margin-top: $title-displacement * -1;
             & > ul,ol {
                 list-style: none;
-
+                filter: drop-shadow(1px 1px 0px #{darken(#A88D6C, 40%)});
                 & > li {
-                    padding: .3em;
+                    padding: .1em;
                 }
 
                 & li {
@@ -136,13 +144,13 @@ a {
     
     & > [id^="outline-container"] {
         width: $content-width;
-        margin-left: $sidebar-width;     
+        margin-left: $sidebar-width + 20px;     
         @media only screen and (min-width: 1300px) {
-            width: 900px;
+            width: 700px;
         }
         @media only screen and (max-width: 1300px) {
             margin: auto;
-            width: 900px - ($content-padding * 2);
+            width: 700px - ($content-padding * 2);
         }
         @media only screen and (max-width: 900px) {
             margin: auto;
@@ -170,7 +178,7 @@ a {
     & [id^="outline-container"] > :first-child {
         display: flex;
         justify-content: flex-start;
-        align-items: flex-start;
+        align-items: center;
         margin-bottom: 0px;
         font-family: "Oswald", monospace;
         color: #FFF0F8;
@@ -228,8 +236,8 @@ pre {
     overflow: scroll;
     scrollbar-width: none;
     text-overflow: ellipsis;
-    margin: 1.2em;
-    border-radius: 4px;
+    margin: 0px;
+    border-radius: 1px;
     filter: drop-shadow(0px 1px 1px #{darken($color1, 35%)});
     &.src {
         position: relative;

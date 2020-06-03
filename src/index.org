@@ -1,9 +1,11 @@
 #+TITLE: Index
 
 - Clojure
-  - [[file:Clojure/configuration.org][configuration]]
+  - [[file:Clojure/configuration.org][Notes on Clojure projects configuration and scaffolding, etc.]]
 - Configuration
   - [[file:Configuration/org-publish.org][org-publish Tips & Tricks]]
+- DataScience
+  - [[file:DataScience/thoughts_and_ideas.org][Data Science thoughts & ideas]]
 - Linux
   - [[file:Linux/configuration.org][Linux Configuration Notes]]
 - Misc

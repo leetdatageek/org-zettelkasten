@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-05-30 Sat 03:03 -->
+<!-- 2020-06-03 Wed 15:39 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Linux Configuration Notes</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="leabravo">
+<meta name="author" content="John Doe">
 <meta name="description" content="Tips &amp; Tricks for making your life easier when publishing blogs with emacs on minimum steroids."
 >
 <meta property="og:title" content="org-publish Tips & Tricks" />
@@ -14,50 +14,28 @@
 <meta property="og:type" content="website" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012-2020 Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
+// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
 <!--/*--><![CDATA[/*><!--*/
- function CodeHighlightOn(elem, id)
- {
-   var target = document.getElementById(id);
-   if(null != target) {
-     elem.cacheClassElem = elem.className;
-     elem.cacheClassTarget = target.className;
-     target.className = "code-highlighted";
-     elem.className   = "code-highlighted";
-   }
- }
- function CodeHighlightOff(elem, id)
- {
-   var target = document.getElementById(id);
-   if(elem.cacheClassElem)
-     elem.className = elem.cacheClassElem;
-   if(elem.cacheClassTarget)
-     target.className = elem.cacheClassTarget;
- }
-/*]]>*///-->
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.cacheClassElem = elem.className;
+         elem.cacheClassTarget = target.className;
+         target.className = "code-highlighted";
+         elem.className   = "code-highlighted";
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(elem.cacheClassElem)
+         elem.className = elem.cacheClassElem;
+       if(elem.cacheClassTarget)
+         target.className = elem.cacheClassTarget;
+     }
+    /*]]>*///-->
+// @license-end
 </script>
 </head>
 <body>
@@ -68,35 +46,35 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orga4cce26">1. Networking</a>
+<li><a href="#org102413c">1. Networking</a>
 <ul>
-<li><a href="#org1c5d154">1.1. l2tp over IPsec</a></li>
+<li><a href="#orga13d0c5">1.1. l2tp over IPsec</a></li>
 </ul>
 </li>
-<li><a href="#org7e12c51">2. Peripherals</a>
+<li><a href="#orgc11acd9">2. Peripherals</a>
 <ul>
-<li><a href="#org2a69477">2.1. Printer</a></li>
+<li><a href="#org4868c41">2.1. Printer</a></li>
 </ul>
 </li>
-<li><a href="#orgd2eeb6e">3. Video</a>
+<li><a href="#orgf6c0bf3">3. Video</a>
 <ul>
-<li><a href="#org0ad9c9e">3.1. GPU</a></li>
+<li><a href="#org5d5af2e">3.1. GPU</a></li>
 </ul>
 </li>
-<li><a href="#org5e28d80">4. Storage</a>
+<li><a href="#org628582e">4. Storage</a>
 <ul>
-<li><a href="#orgda6bea3">4.1. WebDav Setup</a></li>
+<li><a href="#orgd603f66">4.1. WebDav Setup</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-orga4cce26" class="outline-2">
-<h2 id="orga4cce26"><span class="section-number-2">1</span> Networking</h2>
+<div id="outline-container-org102413c" class="outline-2">
+<h2 id="org102413c"><span class="section-number-2">1</span> Networking</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-org1c5d154" class="outline-3">
-<h3 id="org1c5d154"><span class="section-number-3">1.1</span> l2tp over IPsec</h3>
+<div id="outline-container-orga13d0c5" class="outline-3">
+<h3 id="orga13d0c5"><span class="section-number-3">1.1</span> l2tp over IPsec</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 workaround to make the VPN work on Ubuntu 19.04, using network-manager-l2tp 1.2.10-1
@@ -110,12 +88,12 @@ $ sudo update-rc.d xl2tpd disable
 </div>
 </div>
 
-<div id="outline-container-org7e12c51" class="outline-2">
-<h2 id="org7e12c51"><span class="section-number-2">2</span> Peripherals</h2>
+<div id="outline-container-orgc11acd9" class="outline-2">
+<h2 id="orgc11acd9"><span class="section-number-2">2</span> Peripherals</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org2a69477" class="outline-3">
-<h3 id="org2a69477"><span class="section-number-3">2.1</span> Printer</h3>
+<div id="outline-container-org4868c41" class="outline-3">
+<h3 id="org4868c41"><span class="section-number-3">2.1</span> Printer</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Network Printer</li>
@@ -127,12 +105,12 @@ $ sudo update-rc.d xl2tpd disable
 </div>
 </div>
 
-<div id="outline-container-orgd2eeb6e" class="outline-2">
-<h2 id="orgd2eeb6e"><span class="section-number-2">3</span> Video</h2>
+<div id="outline-container-orgf6c0bf3" class="outline-2">
+<h2 id="orgf6c0bf3"><span class="section-number-2">3</span> Video</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org0ad9c9e" class="outline-3">
-<h3 id="org0ad9c9e"><span class="section-number-3">3.1</span> GPU</h3>
+<div id="outline-container-org5d5af2e" class="outline-3">
+<h3 id="org5d5af2e"><span class="section-number-3">3.1</span> GPU</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Choose the model from the <a href='https://www.nvidia.com/Download/index.aspx?lang=en-us' rel='external nofollow'>NVIDIA drivers page</a> and choose Linux as the OS. On the next page, at the top the version of the driver will appear (i.e 435). Then you can go ahead and install the drivers.
@@ -145,12 +123,12 @@ $ sudo nvidia-xconfig
 </div>
 </div>
 
-<div id="outline-container-org5e28d80" class="outline-2">
-<h2 id="org5e28d80"><span class="section-number-2">4</span> Storage</h2>
+<div id="outline-container-org628582e" class="outline-2">
+<h2 id="org628582e"><span class="section-number-2">4</span> Storage</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgda6bea3" class="outline-3">
-<h3 id="orgda6bea3"><span class="section-number-3">4.1</span> WebDav Setup</h3>
+<div id="outline-container-orgd603f66" class="outline-3">
+<h3 id="orgd603f66"><span class="section-number-3">4.1</span> WebDav Setup</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <a href='https://blog.sleeplessbeastie.eu/2017/09/04/how-to-mount-webdav-share/' rel='external nofollow'>Guide by Milosz Galazka</a>
@@ -160,9 +138,8 @@ $ sudo nvidia-xconfig
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: leabravo</p>
-<p class="date">Created: 2020-05-30 Sat 03:03</p>
-<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+<p class="author">Author: John Doe</p>
+<p class="date">Created: 2020-06-03 Wed 15:39</p>
 </div>
 </body>
 </html>

@@ -1,0 +1,14 @@
+#+STARTUP: indent align hidestars
+#+TITLE: Data Science thoughts & ideas
+#+DESCRIPTION: Some thoughts and ideas that come up when I am thinking about data.
+#+HTML_HEAD: <meta property="og:title" content="Data Science thoughts & ideas" />
+#+HTML_HEAD: <meta property="og:description" content="Some thoughts and ideas that come up when I am thinking about data." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
+
+* Schrodinger's Bias
+  Today I was thinking about wikipedia and it's decline in quality due to the "editor's dictatorial regime" and a question came to my mind: what if the bias in data is not a phenomena in itself but a byproduct of our own bias?.
+  When we think about getting information we often say it's the process of getting insight out of the data. But an insight is an interpretation and an interpretation can be just as broad as one's knowledge. We - more often than not - leave something on the table. The information can only be valueble when interpreted by all interested parties.
+  But what if data was collected by just one party? Could the bias be introduced beforehand by lackluster polls or one sided questions?
+  These days data is ever more important but being skeptic is the key.
+  As long as media keeps having polarized opinions and alienating the opossing parties, information silos and echo chambers happen and said information is less informative because is highly biased because it is not addressed by the people with an opposite hypoteses.
