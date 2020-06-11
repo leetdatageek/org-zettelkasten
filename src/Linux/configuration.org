@@ -38,6 +38,24 @@ Choose the model from the {{{a(NVIDIA drivers page,https://www.nvidia.com/Downlo
 $ sudo apt install nvidia-drivers-335
 $ sudo nvidia-xconfig
 #+end_example
+** Brightness
+1. [X] Check the backlight directory: ls /sys/class/backlight. Must have intel_backlight.
+
+2. [X] To get the Identifier, run xrandr --verbose. Mine happened to be 0x42.
+
+3. [X] Check /etx/X11/xorg.conf and make the following adjustments:
+   #+BEGIN_SRC shell
+   Section "Device"
+       Identifier     "0x42"
+       Option         "Backlight" "intel_backligth"
+       #Identifier     "Device0"
+       Driver         "nvidia"
+       VendorName     "NVIDIA Corporation"
+   #+END_SRC
+
+4. [X] I then reboot. It should work from there.
+
+Credit to {{{a(Stack Overflow answer,https://unix.stackexchange.com/a/385116)}}}
 
 * Storage
 :PROPERTIES:
