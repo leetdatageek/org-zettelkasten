@@ -35,7 +35,8 @@ $ sudo update-rc.d xl2tpd disable
 ** GPU
 Choose the model from the {{{a(NVIDIA drivers page,https://www.nvidia.com/Download/index.aspx?lang=en-us)}}} and choose Linux as the OS. On the next page, at the top the version of the driver will appear (i.e 435). Then you can go ahead and install the drivers.
 #+begin_example
-$ sudo apt install nvidia-drivers-335
+$ sudo apt install nvidia-drivers-440 libnvidia-cfgi-440 libnvidia-cfgi-440-server xserver-xorg-video-nvidia-440 xserver-xorg-video-nvidia-440-server
+$ sudo rm -v /etc/X11/xorg.conf*
 $ sudo nvidia-xconfig
 #+end_example
 ** Brightness
@@ -43,7 +44,8 @@ $ sudo nvidia-xconfig
 
 2. [X] To get the Identifier, run xrandr --verbose. Mine happened to be 0x42.
 
-3. [X] Check /etx/X11/xorg.conf and make the following adjustments:
+3. [X] Check /etx/X11/xorg.conf and make the following adjustments
+
    #+BEGIN_SRC shell
    Section "Device"
        Identifier     "0x42"
@@ -66,3 +68,33 @@ Credit to {{{a(Stack Overflow answer,https://unix.stackexchange.com/a/385116)}}}
 :ID:       b0f5cea2-1b38-419c-b445-503a32193647
 :END:
 {{{a(Guide by Milosz Galazka,https://blog.sleeplessbeastie.eu/2017/09/04/how-to-mount-webdav-share/)}}}
+* Suckless
+** DWM
+*** Patches
+- attachaside :: spawn new windows aside, not in the main pane
+- vanitygaps :: add gaps duh
+- centeredmaster :: layout
+- pertag :: layouts per tag
+*** TODO autostart stuff with systemd
+*** Making the window manager selectable within the session manager
+{{{a(Thread,https://forum.manjaro.org/t/dwm-not-showing-in-lightdm-log-in-screen/98220/2)}}}
+*** Dependencies
+#+BEGIN_SRC shell
+sudo apt install libxft-dev libxcb-xinerama0 libxinerama-dev
+#+END_SRC
+*** Applying patches
+{{{a(Stack Overflow answer,https://superuser.com/questions/658038/how-to-add-patches-to-dwm)}}}
+* Flatpak
+** xdg-open not enabled by default
+The .desktop file already has the "zoommtg" protocol association in
+the shape of *MimeType=x-scheme-handler/zoommtg;* so there is no need
+to run =xdg-settings set default-url-scheme-handler zoommtg
+us.zoom.Zoom.desktop=
+
+#+BEGIN_SRC shell
+$ export PATH=$PATH:/var/lib/flatpak/exports/share/applications
+$ exec zsh
+$ xdg-desktop-menu install us.zoom.Zoom.desktop --novendor
+$ xdg-settings check default-url-scheme-handler zoommtg us.zoom.Zoom.desktop
+> yes
+#+END_SRC

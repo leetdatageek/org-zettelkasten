@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- 2020-06-11 Thu 04:17 -->
+<!-- 2020-09-01 Tue 20:20 -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Linux Configuration Notes</title>
 <meta name="generator" content="Org mode">
-<meta name="author" content="John Doe">
+<meta name="author" content="Leandro Bravo">
 <meta name="description" content="Tips &amp; Tricks for making your life easier when publishing blogs with emacs on minimum steroids."
 >
 <meta property="og:title" content="org-publish Tips & Tricks" />
@@ -14,28 +14,50 @@
 <meta property="og:type" content="website" />
 <link rel="stylesheet" type="text/css" href="/css/style.css" />
 <script type="text/javascript">
-// @license magnet:?xt=urn:btih:1f739d935676111cfff4b4693e3816e664797050&amp;dn=gpl-3.0.txt GPL-v3-or-Later
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
 <!--/*--><![CDATA[/*><!--*/
-     function CodeHighlightOn(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(null != target) {
-         elem.cacheClassElem = elem.className;
-         elem.cacheClassTarget = target.className;
-         target.className = "code-highlighted";
-         elem.className   = "code-highlighted";
-       }
-     }
-     function CodeHighlightOff(elem, id)
-     {
-       var target = document.getElementById(id);
-       if(elem.cacheClassElem)
-         elem.className = elem.cacheClassElem;
-       if(elem.cacheClassTarget)
-         target.className = elem.cacheClassTarget;
-     }
-    /*]]>*///-->
-// @license-end
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
 </script>
 </head>
 <body>
@@ -46,36 +68,54 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org102413c">1. Networking</a>
+<li><a href="#orga4cce26">1. Networking</a>
 <ul>
-<li><a href="#orga13d0c5">1.1. l2tp over IPsec</a></li>
+<li><a href="#org1c5d154">1.1. l2tp over IPsec</a></li>
 </ul>
 </li>
-<li><a href="#orgc11acd9">2. Peripherals</a>
+<li><a href="#org7e12c51">2. Peripherals</a>
 <ul>
-<li><a href="#org4868c41">2.1. Printer</a></li>
+<li><a href="#org2a69477">2.1. Printer</a></li>
 </ul>
 </li>
-<li><a href="#orgf6c0bf3">3. Video</a>
+<li><a href="#orgd2eeb6e">3. Video</a>
 <ul>
-<li><a href="#org5d5af2e">3.1. GPU</a></li>
-<li><a href="#org2413d49">3.2. Brightness</a></li>
+<li><a href="#org0ad9c9e">3.1. GPU</a></li>
+<li><a href="#org8fff607">3.2. Brightness</a></li>
 </ul>
 </li>
-<li><a href="#org628582e">4. Storage</a>
+<li><a href="#org5e28d80">4. Storage</a>
 <ul>
-<li><a href="#orgd603f66">4.1. WebDav Setup</a></li>
+<li><a href="#orgda6bea3">4.1. WebDav Setup</a></li>
+</ul>
+</li>
+<li><a href="#orgd24b0b9">5. Suckless</a>
+<ul>
+<li><a href="#orgdee07e0">5.1. DWM</a>
+<ul>
+<li><a href="#orgbdba74a">5.1.1. Patches</a></li>
+<li><a href="#org07302d6">5.1.2. <span class="todo TODO">TODO</span> autostart stuff with systemd</a></li>
+<li><a href="#orgad9c62a">5.1.3. Making the window manager selectable within the session manager</a></li>
+<li><a href="#orgb2fbcd8">5.1.4. Dependencies</a></li>
+<li><a href="#orgc9e1ecd">5.1.5. Applying patches</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#orgda8bfc6">6. Flatpak</a>
+<ul>
+<li><a href="#org8fdfaa9">6.1. xdg-open not enabled by default</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </nav>
-<div id="outline-container-org102413c" class="outline-2">
-<h2 id="org102413c"><span class="section-number-2">1</span> Networking</h2>
+<div id="outline-container-orga4cce26" class="outline-2">
+<h2 id="orga4cce26"><span class="section-number-2">1</span> Networking</h2>
 <div class="outline-text-2" id="text-1">
 </div>
-<div id="outline-container-orga13d0c5" class="outline-3">
-<h3 id="orga13d0c5"><span class="section-number-3">1.1</span> l2tp over IPsec</h3>
+<div id="outline-container-org1c5d154" class="outline-3">
+<h3 id="org1c5d154"><span class="section-number-3">1.1</span> l2tp over IPsec</h3>
 <div class="outline-text-3" id="text-1-1">
 <p>
 workaround to make the VPN work on Ubuntu 19.04, using network-manager-l2tp 1.2.10-1
@@ -89,12 +129,12 @@ $ sudo update-rc.d xl2tpd disable
 </div>
 </div>
 
-<div id="outline-container-orgc11acd9" class="outline-2">
-<h2 id="orgc11acd9"><span class="section-number-2">2</span> Peripherals</h2>
+<div id="outline-container-org7e12c51" class="outline-2">
+<h2 id="org7e12c51"><span class="section-number-2">2</span> Peripherals</h2>
 <div class="outline-text-2" id="text-2">
 </div>
-<div id="outline-container-org4868c41" class="outline-3">
-<h3 id="org4868c41"><span class="section-number-3">2.1</span> Printer</h3>
+<div id="outline-container-org2a69477" class="outline-3">
+<h3 id="org2a69477"><span class="section-number-3">2.1</span> Printer</h3>
 <div class="outline-text-3" id="text-2-1">
 <ul class="org-ul">
 <li>Network Printer</li>
@@ -106,24 +146,25 @@ $ sudo update-rc.d xl2tpd disable
 </div>
 </div>
 
-<div id="outline-container-orgf6c0bf3" class="outline-2">
-<h2 id="orgf6c0bf3"><span class="section-number-2">3</span> Video</h2>
+<div id="outline-container-orgd2eeb6e" class="outline-2">
+<h2 id="orgd2eeb6e"><span class="section-number-2">3</span> Video</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="outline-container-org5d5af2e" class="outline-3">
-<h3 id="org5d5af2e"><span class="section-number-3">3.1</span> GPU</h3>
+<div id="outline-container-org0ad9c9e" class="outline-3">
+<h3 id="org0ad9c9e"><span class="section-number-3">3.1</span> GPU</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 Choose the model from the <a href='https://www.nvidia.com/Download/index.aspx?lang=en-us' rel='external nofollow'>NVIDIA drivers page</a> and choose Linux as the OS. On the next page, at the top the version of the driver will appear (i.e 435). Then you can go ahead and install the drivers.
 </p>
 <pre class="example">
-$ sudo apt install nvidia-drivers-335
+$ sudo apt install nvidia-drivers-440 libnvidia-cfgi-440 libnvidia-cfgi-440-server xserver-xorg-video-nvidia-440 xserver-xorg-video-nvidia-440-server
+$ sudo rm -v /etc/X11/xorg.conf*
 $ sudo nvidia-xconfig
 </pre>
 </div>
 </div>
-<div id="outline-container-org2413d49" class="outline-3">
-<h3 id="org2413d49"><span class="section-number-3">3.2</span> Brightness</h3>
+<div id="outline-container-org8fff607" class="outline-3">
+<h3 id="org8fff607"><span class="section-number-3">3.2</span> Brightness</h3>
 <div class="outline-text-3" id="text-3-2">
 <ol class="org-ol">
 <li class="on"><code>[X]</code> Check the backlight directory: ls /sys/class/backlight. Must have intel<sub>backlight</sub>.</li>
@@ -131,15 +172,16 @@ $ sudo nvidia-xconfig
 <li class="on"><code>[X]</code> To get the Identifier, run xrandr &#x2013;verbose. Mine happened to be 0x42.</li>
 
 <li class="on"><code>[X]</code> <p>
-Check /etx/X11/xorg.conf and make the following adjustments:
+Check /etx/X11/xorg.conf and make the following adjustments
 </p>
+
 <div class="org-src-container">
-<pre class="src src-shell">   Section <span style="color: #98be65;">"Device"</span>
-       Identifier     <span style="color: #98be65;">"0x42"</span>
-       Option         <span style="color: #98be65;">"Backlight"</span> <span style="color: #98be65;">"intel_backligth"</span>
-       <span style="color: #5B6268;">#</span><span style="color: #5B6268;">Identifier     "Device0"</span>
-       Driver         <span style="color: #98be65;">"nvidia"</span>
-       VendorName     <span style="color: #98be65;">"NVIDIA Corporation"</span>
+<pre class="src src-shell">Section "Device"
+    Identifier     "0x42"
+    Option         "Backlight" "intel_backligth"
+    #Identifier     "Device0"
+    Driver         "nvidia"
+    VendorName     "NVIDIA Corporation"
 </pre>
 </div></li>
 
@@ -153,12 +195,12 @@ Credit to <a href='https://unix.stackexchange.com/a/385116' rel='external nofoll
 </div>
 </div>
 
-<div id="outline-container-org628582e" class="outline-2">
-<h2 id="org628582e"><span class="section-number-2">4</span> Storage</h2>
+<div id="outline-container-org5e28d80" class="outline-2">
+<h2 id="org5e28d80"><span class="section-number-2">4</span> Storage</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="outline-container-orgd603f66" class="outline-3">
-<h3 id="orgd603f66"><span class="section-number-3">4.1</span> WebDav Setup</h3>
+<div id="outline-container-orgda6bea3" class="outline-3">
+<h3 id="orgda6bea3"><span class="section-number-3">4.1</span> WebDav Setup</h3>
 <div class="outline-text-3" id="text-4-1">
 <p>
 <a href='https://blog.sleeplessbeastie.eu/2017/09/04/how-to-mount-webdav-share/' rel='external nofollow'>Guide by Milosz Galazka</a>
@@ -166,10 +208,85 @@ Credit to <a href='https://unix.stackexchange.com/a/385116' rel='external nofoll
 </div>
 </div>
 </div>
+<div id="outline-container-orgd24b0b9" class="outline-2">
+<h2 id="orgd24b0b9"><span class="section-number-2">5</span> Suckless</h2>
+<div class="outline-text-2" id="text-5">
+</div>
+<div id="outline-container-orgdee07e0" class="outline-3">
+<h3 id="orgdee07e0"><span class="section-number-3">5.1</span> DWM</h3>
+<div class="outline-text-3" id="text-5-1">
+</div>
+<div id="outline-container-orgbdba74a" class="outline-4">
+<h4 id="orgbdba74a"><span class="section-number-4">5.1.1</span> Patches</h4>
+<div class="outline-text-4" id="text-5-1-1">
+<dl class="org-dl">
+<dt>attachaside</dt><dd>spawn new windows aside, not in the main pane</dd>
+<dt>vanitygaps</dt><dd>add gaps duh</dd>
+<dt>centeredmaster</dt><dd>layout</dd>
+<dt>pertag</dt><dd>layouts per tag</dd>
+</dl>
+</div>
+</div>
+<div id="outline-container-org07302d6" class="outline-4">
+<h4 id="org07302d6"><span class="section-number-4">5.1.2</span> <span class="todo tTODO">TODO</span> autostart stuff with systemd</h4>
+</div>
+<div id="outline-container-orgad9c62a" class="outline-4">
+<h4 id="orgad9c62a"><span class="section-number-4">5.1.3</span> Making the window manager selectable within the session manager</h4>
+<div class="outline-text-4" id="text-5-1-3">
+<p>
+<a href='https://forum.manjaro.org/t/dwm-not-showing-in-lightdm-log-in-screen/98220/2' rel='external nofollow'>Thread</a>
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2fbcd8" class="outline-4">
+<h4 id="orgb2fbcd8"><span class="section-number-4">5.1.4</span> Dependencies</h4>
+<div class="outline-text-4" id="text-5-1-4">
+<div class="org-src-container">
+<pre class="src src-shell">sudo apt install libxft-dev libxcb-xinerama0 libxinerama-dev
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc9e1ecd" class="outline-4">
+<h4 id="orgc9e1ecd"><span class="section-number-4">5.1.5</span> Applying patches</h4>
+<div class="outline-text-4" id="text-5-1-5">
+<p>
+<a href='https://superuser.com/questions/658038/how-to-add-patches-to-dwm' rel='external nofollow'>Stack Overflow answer</a>
+</p>
+</div>
+</div>
+</div>
+</div>
+<div id="outline-container-orgda8bfc6" class="outline-2">
+<h2 id="orgda8bfc6"><span class="section-number-2">6</span> Flatpak</h2>
+<div class="outline-text-2" id="text-6">
+</div>
+<div id="outline-container-org8fdfaa9" class="outline-3">
+<h3 id="org8fdfaa9"><span class="section-number-3">6.1</span> xdg-open not enabled by default</h3>
+<div class="outline-text-3" id="text-6-1">
+<p>
+The .desktop file already has the "zoommtg" protocol association in
+the shape of <b>MimeType=x-scheme-handler/zoommtg;</b> so there is no need
+to run <code>xdg-settings set default-url-scheme-handler zoommtg
+us.zoom.Zoom.desktop</code>
+</p>
+
+<div class="org-src-container">
+<pre class="src src-shell">$ export PATH=$PATH:/var/lib/flatpak/exports/share/applications
+$ exec zsh
+$ xdg-desktop-menu install us.zoom.Zoom.desktop --novendor
+$ xdg-settings check default-url-scheme-handler zoommtg us.zoom.Zoom.desktop
+&gt; yes
+</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: John Doe</p>
-<p class="date">Created: 2020-06-11 Thu 04:17</p>
+<p class="author">Author: Leandro Bravo</p>
+<p class="date">Created: 2020-09-01 Tue 20:20</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>

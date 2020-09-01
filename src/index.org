@@ -1,8 +1,9 @@
 #+TITLE: Index
 
 - Clojure
-  - [[file:Clojure/configuration.org][Notes on Clojure projects configuration and scaffolding, etc.]]
+  - [[file:Clojure/configuration.org][configuration]]
 - Configuration
+  - [[file:Configuration/flutter.org][Setting up the Flutter Dev Environment]]
   - [[file:Configuration/org-publish.org][org-publish Tips & Tricks]]
 - DataScience
   - [[file:DataScience/thoughts_and_ideas.org][Data Science thoughts & ideas]]

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0"
-	 xmlns:content="http://purl.org/rss/1.0/modules/content/"
-	 xmlns:wfw="http://wellformedweb.org/CommentAPI/"
-	 xmlns:dc="http://purl.org/dc/elements/1.1/"
-	 xmlns:atom="http://www.w3.org/2005/Atom"
-	 xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
-	 xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
-	 xmlns:georss="http://www.georss.org/georss"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+     xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+     xmlns:georss="http://www.georss.org/georss"
      xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
      xmlns:media="http://search.yahoo.com/mrss/"><channel>
   <title>Index</title>
@@ -14,10 +14,10 @@
   <link>http://www.leetdatageek.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Thu, 11 Jun 2020 04:17:37 -0300</pubDate>
-  <lastBuildDate>Thu, 11 Jun 2020 04:17:37 -0300</lastBuildDate>
-  <generator>Emacs 28.0 Org-mode 9.4</generator>
-  <webMaster>john@doe.com (John Doe)</webMaster>
+  <pubDate>Tue, 01 Sep 2020 20:20:07 -0300</pubDate>
+  <lastBuildDate>Tue, 01 Sep 2020 20:20:07 -0300</lastBuildDate>
+  <generator>Emacs 28.0 Org-mode 9.3.7</generator>
+  <webMaster> (Leandro Bravo)</webMaster>
   <image>
     <url>https://orgmode.org/img/org-mode-unicorn-logo.png</url>
     <title>Index</title>
@@ -27,10 +27,11 @@
   <ul class="org-ul">
     <li>Clojure
     <ul class="org-ul">
-      <li><a href="Clojure/configuration.html">Notes on Clojure projects configuration and scaffolding, etc.</a></li>
+      <li><a href="Clojure/configuration.html">configuration</a></li>
     </ul></li>
     <li>Configuration
     <ul class="org-ul">
+      <li><a href="Configuration/flutter.html">Setting up the Flutter Dev Environment</a></li>
       <li><a href="Configuration/org-publish.html">org-publish Tips &amp; Tricks</a></li>
     </ul></li>
     <li>DataScience

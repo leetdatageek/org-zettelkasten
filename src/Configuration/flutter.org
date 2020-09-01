@@ -1,0 +1,92 @@
+#+STARTUP: indent align hidestars
+#+TITLE: Setting up the Flutter Dev Environment
+#+DESCRIPTION: Setting up the Flutter Dev Environment.
+#+HTML_HEAD: <meta property="og:title" content="Setting up the Flutter Dev Environment" />
+#+HTML_HEAD: <meta property="og:description" content="Setting up the Flutter Dev Environment" />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
+* Set up Dev Evironment
+#+BEGIN_QUOTE
+DO NOT INSTALL VIM'S YCM WITH ANACONDA'S PYTHON, USE THE ONE FROM I.E =sudo apt install python3-dev=
+#+END_QUOTE
+
+** Downloading the binaries
+*** Android DevTools
+Head to the {{{a(Android devtools download page,https://developer.android.com/studio#downloads)}}} and go to the bottom-most section "Command line tools only". Download the appropiate zip file and unzip it to the =~/bin/android-home/cmdline-tools= folder, or any other root folder you want but be warned that onwards I will assume that the user binaries are held inside the =~/bin/**= directory. Make sure that the directory structure follows the guidelines described in {{{a(this Stack Overflow answer,https://stackoverflow.com/a/61176718/5775959)}}} otherwise you won't be able to fetch the sdk devices repo.
+
+#+BEGIN_EXAMPLE
+# the 'android-home' folder scaffold should look like this:
+$ ls android-home
+  build-tools
+  cmdline-tools
+    tools
+  emulator
+  licenses
+  patcher
+  platform-tools
+  platforms
+#+END_EXAMPLE
+
+*** Flutter
+#+BEGIN_EXAMPLE
+$ cd ~/bin
+$ git clone https://github.com/flutter/flutter.git -b stable --depth 1
+#+END_EXAMPLE
+
+** Setting up the tools
+Add the following lines yo your =.zshrc= or =.bashrc= file.
+#+BEGIN_EXAMPLE
+export ANDROID_HOME="$HOME/bin/android-home"
+export PATH="$PATH:~/bin/flutter/bin"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
+#+END_EXAMPLE
+
+Then you can proceed to execute the following commands to prevent Google from phoning home.
+#+BEGIN_EXAMPLE
+$ flutter
+$ flutter config --no-analytics
+$ dart --disable-analytics
+#+END_EXAMPLE
+
+Install the sdk tools as described in {{{a(the official documentation for sdkmanager,https://developer.android.com/studio/command-line/sdkmanager)}}} and *accept all licenses* otherwise the subsequent commands won't work.
+#+BEGIN_EXAMPLE
+# select the platforms to install with sdkmanager --list | less
+sdkmanager "platform-tools" "build-tools;29.0.3" "platforms;android-29" "system-images;android-29;google_apis;x86_64"
+sdkmanager --licenses
+avdmanager create avd -n android-29 -k  "system-images;android-29;google_apis;x86_64"
+# run the emulator as a background process (pipe output to the void and disown the process)
+$ANDROID_HOME/tools/emulator -avd android-29 -gpu host $>/dev/null &!
+#+END_EXAMPLE
+
+We need to fetch the dart sdk
+#+BEGIN_EXAMPLE
+cd ~/Downloads
+cd wget https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip
+unzip dartsdk-linux-x64-release.zip -d ~/bin
+#+END_EXAMPLE
+*** Vim config
+Install VIM from source {{{a(following these instructions,https://www.vim.org/git.php)}}}.
+
+Enabling python3 support
+#+BEGIN_EXAMPLE
+$ sudo apt install python3.8 python3.8-dev python3.8-venv
+$ make distclean
+$ ./configure --enable-python3interp=yes --with-python3-command=/usr/bin/python3.8 --with-python3-config-dir=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu --prefix=/usr
+$ sudo make clean install
+#+END_EXAMPLE
+
+
+We are stealing some lines from the {{{a(YouCompleteMe lsp examples,https://github.com/ycm-core/lsp-examples)}}} and adapting the lines with the information provided {{{a(here,https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md#running-the-server)}}}.
+
+#+BEGIN_EXAMPLE
+# Make sure to have these installed
+# Plug 'dart-lang/dart-vim-plugin'
+# Plug 'thosakwe/vim-flutter'
+
+let g:ycm_language_server = [
+\    {
+\       'name': 'dart',
+\       'cmdline': [ 'dart', '~/src/dart-sdk/dart/analysis_server.dart.snapshot', '--lsp' ],
+\       'filetypes': [ 'dart' ]
+\    }]
+#+END_EXAMPLE

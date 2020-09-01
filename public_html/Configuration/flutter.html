@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- 2020-09-01 Tue 20:20 -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setting up the Flutter Dev Environment</title>
+<meta name="generator" content="Org mode">
+<meta name="author" content="Leandro Bravo">
+<meta name="description" content="Setting up the Flutter Dev Environment."
+>
+<meta property="og:title" content="Setting up the Flutter Dev Environment" />
+<meta property="og:description" content="Setting up the Flutter Dev Environment" />
+<meta property="og:type" content="website" />
+<link rel="stylesheet" type="text/css" href="/css/style.css" />
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2020 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<header>
+<h1 class="title">Setting up the Flutter Dev Environment</h1>
+</header><nav id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org92a0134">1. Set up Dev Evironment</a>
+<ul>
+<li><a href="#orgc8d66bc">1.1. Downloading the binaries</a>
+<ul>
+<li><a href="#org2fbc04e">1.1.1. Android DevTools</a></li>
+<li><a href="#orgc87425e">1.1.2. Flutter</a></li>
+</ul>
+</li>
+<li><a href="#orgee32500">1.2. Setting up the tools</a>
+<ul>
+<li><a href="#org3424a60">1.2.1. Vim config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</nav>
+<div id="outline-container-org92a0134" class="outline-2">
+<h2 id="org92a0134"><span class="section-number-2">1</span> Set up Dev Evironment</h2>
+<div class="outline-text-2" id="text-1">
+<blockquote>
+<p>
+DO NOT INSTALL VIM'S YCM WITH ANACONDA'S PYTHON, USE THE ONE FROM I.E <code>sudo apt install python3-dev</code>
+</p>
+</blockquote>
+</div>
+
+<div id="outline-container-orgc8d66bc" class="outline-3">
+<h3 id="orgc8d66bc"><span class="section-number-3">1.1</span> Downloading the binaries</h3>
+<div class="outline-text-3" id="text-1-1">
+</div>
+<div id="outline-container-org2fbc04e" class="outline-4">
+<h4 id="org2fbc04e"><span class="section-number-4">1.1.1</span> Android DevTools</h4>
+<div class="outline-text-4" id="text-1-1-1">
+<p>
+Head to the <a href='https://developer.android.com/studio#downloads' rel='external nofollow'>Android devtools download page</a> and go to the bottom-most section "Command line tools only". Download the appropiate zip file and unzip it to the <code>~/bin/android-home/cmdline-tools</code> folder, or any other root folder you want but be warned that onwards I will assume that the user binaries are held inside the <code>~/bin/**</code> directory. Make sure that the directory structure follows the guidelines described in <a href='https://stackoverflow.com/a/61176718/5775959' rel='external nofollow'>this Stack Overflow answer</a> otherwise you won't be able to fetch the sdk devices repo.
+</p>
+
+<pre class="example">
+# the 'android-home' folder scaffold should look like this:
+$ ls android-home
+  build-tools
+  cmdline-tools
+    tools
+  emulator
+  licenses
+  patcher
+  platform-tools
+  platforms
+</pre>
+</div>
+</div>
+
+<div id="outline-container-orgc87425e" class="outline-4">
+<h4 id="orgc87425e"><span class="section-number-4">1.1.2</span> Flutter</h4>
+<div class="outline-text-4" id="text-1-1-2">
+<pre class="example">
+$ cd ~/bin
+$ git clone https://github.com/flutter/flutter.git -b stable --depth 1
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgee32500" class="outline-3">
+<h3 id="orgee32500"><span class="section-number-3">1.2</span> Setting up the tools</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+Add the following lines yo your <code>.zshrc</code> or <code>.bashrc</code> file.
+</p>
+<pre class="example">
+export ANDROID_HOME="$HOME/bin/android-home"
+export PATH="$PATH:~/bin/flutter/bin"
+export PATH="$PATH:$ANDROID_HOME/tools/bin"
+</pre>
+
+<p>
+Then you can proceed to execute the following commands to prevent Google from phoning home.
+</p>
+<pre class="example">
+$ flutter
+$ flutter config --no-analytics
+$ dart --disable-analytics
+</pre>
+
+<p>
+Install the sdk tools as described in <a href='https://developer.android.com/studio/command-line/sdkmanager' rel='external nofollow'>the official documentation for sdkmanager</a> and <b>accept all licenses</b> otherwise the subsequent commands won't work.
+</p>
+<pre class="example">
+# select the platforms to install with sdkmanager --list | less
+sdkmanager "platform-tools" "build-tools;29.0.3" "platforms;android-29" "system-images;android-29;google_apis;x86_64"
+sdkmanager --licenses
+avdmanager create avd -n android-29 -k  "system-images;android-29;google_apis;x86_64"
+# run the emulator as a background process (pipe output to the void and disown the process)
+$ANDROID_HOME/tools/emulator -avd android-29 -gpu host $&gt;/dev/null &amp;!
+</pre>
+
+<p>
+We need to fetch the dart sdk
+</p>
+<pre class="example">
+cd ~/Downloads
+cd wget https://storage.googleapis.com/dart-archive/channels/stable/release/latest/sdk/dartsdk-linux-x64-release.zip
+unzip dartsdk-linux-x64-release.zip -d ~/bin
+</pre>
+</div>
+<div id="outline-container-org3424a60" class="outline-4">
+<h4 id="org3424a60"><span class="section-number-4">1.2.1</span> Vim config</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<p>
+Install VIM from source <a href='https://www.vim.org/git.php' rel='external nofollow'>following these instructions</a>.
+</p>
+
+<p>
+Enabling python3 support
+</p>
+<pre class="example">
+$ sudo apt install python3.8 python3.8-dev python3.8-venv
+$ make distclean
+$ ./configure --enable-python3interp=yes --with-python3-command=/usr/bin/python3.8 --with-python3-config-dir=/usr/lib/python3.8/config-3.8-x86_64-linux-gnu --prefix=/usr
+$ sudo make clean install
+</pre>
+
+
+<p>
+We are stealing some lines from the <a href='https://github.com/ycm-core/lsp-examples' rel='external nofollow'>YouCompleteMe lsp examples</a> and adapting the lines with the information provided <a href='https://github.com/dart-lang/sdk/blob/master/pkg/analysis_server/tool/lsp_spec/README.md#running-the-server' rel='external nofollow'>here</a>.
+</p>
+
+<pre class="example">
+# Make sure to have these installed
+# Plug 'dart-lang/dart-vim-plugin'
+# Plug 'thosakwe/vim-flutter'
+
+let g:ycm_language_server = [
+\    {
+\       'name': 'dart',
+\       'cmdline': [ 'dart', '~/src/dart-sdk/dart/analysis_server.dart.snapshot', '--lsp' ],
+\       'filetypes': [ 'dart' ]
+\    }]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Leandro Bravo</p>
+<p class="date">Created: 2020-09-01 Tue 20:20</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
