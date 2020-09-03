@@ -1,0 +1,46 @@
+#+STARTUP: indent hidestars
+
+* :unicorn: :golf: 
+** Challege [[http://www.vimgolf.com/challenges/5f1e0217becb80000692b9c4#5f1e3af9becb80000c92ba0c][Rural Post]]
+*** Solution
+#+BEGIN_EXAMPLE
+;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
+;; Original keys: C-e M-b S-C-a C-w C-n
+
+Command: last-kbd-macro
+Key: none
+
+Macro:
+
+C-e			;; move-end-of-line
+M-b			;; backward-word
+S-C-a
+C-w			;; kill-region
+C-n			;; next-line
+#+END_EXAMPLE
+
+*** Start File
+
+#+BEGIN_EXAMPLE
+RD 5 Gore 9775
+RD 6 Gore 9776
+RD 7 Gore 9777
+RD 1 Great Barrier Island 0991
+RD 1 Greta Valley 7387
+RD 1 Greytown 5794
+RD 1 Hamilton 3281
+RD 2 Hamilton 3282
+#+END_EXAMPLE
+
+*** End File
+
+#+BEGIN_EXAMPLE
+9775
+9776
+9777
+0991
+7387
+5794
+3281
+3282
+#+END_EXAMPLE
