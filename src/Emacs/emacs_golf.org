@@ -1,7 +1,13 @@
-#+STARTUP: indent hidestars
+#+STARTUP: indent align hidestars
+#+TITLE: Emacs Golf
+#+DESCRIPTION: My take on Emacs Golf
+#+HTML_HEAD: <meta property="og:title" content="Emacs Golf" />
+#+HTML_HEAD: <meta property="og:description" content="My take on Emacs Golf." />
+#+HTML_HEAD: <meta property="og:type" content="website" />
+#+MACRO: a @@html:<a href='$2' rel='external nofollow'>$1</a>@@
 
-* :unicorn: :golf: 
-** Challege [[http://www.vimgolf.com/challenges/5f1e0217becb80000692b9c4#5f1e3af9becb80000c92ba0c][Rural Post]]
+* :unicorn: :golf: Emacs Golf 
+** Challege {{{a(Rural Posts,http://www.vimgolf.com/challenges/5f1e0217becb80000692b9c4#5f1e3af9becb80000c92ba0c)}}}
 *** Solution
 #+BEGIN_EXAMPLE
 ;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
@@ -44,3 +50,56 @@ RD 2 Hamilton 3282
 3281
 3282
 #+END_EXAMPLE
+
+** Challenge 
+
+*** Solution
+Run the macro 6 times since there are six non blank lines after the
+first one.
+
+#+BEGIN_EXAMPLE
+;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
+;; Original keys: C-a * C-e M-f
+
+Command: last-kbd-macro
+Key: none
+
+Macro:
+
+C-a			;; move-beginning-of-line
+*	  		        ;; self-insert-command
+C-e			;; move-end-of-line
+M-f			;; forward-word
+#+END_EXAMPLE
+
+*** Start File
+
+#+BEGIN_EXAMPLE
+This is a
+very short
+
+file, but it is 
+still
+full
+
+of
+
+surpises.
+#+END_EXAMPLE
+
+
+*** End File
+
+#+BEGIN_EXAMPLE
+*This is a
+*very short
+
+*file, but it is 
+*still
+*full
+
+*of
+
+*surpises.
+#+END_EXAMPLE
+
