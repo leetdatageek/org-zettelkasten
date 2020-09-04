@@ -14,8 +14,8 @@
   <link>http://www.leetdatageek.com/</link>
   <description><![CDATA[]]></description>
   <language>en</language>
-  <pubDate>Tue, 01 Sep 2020 20:20:07 -0300</pubDate>
-  <lastBuildDate>Tue, 01 Sep 2020 20:20:07 -0300</lastBuildDate>
+  <pubDate>Thu, 03 Sep 2020 21:15:15 -0300</pubDate>
+  <lastBuildDate>Thu, 03 Sep 2020 21:15:15 -0300</lastBuildDate>
   <generator>Emacs 28.0 Org-mode 9.3.7</generator>
   <webMaster> (Leandro Bravo)</webMaster>
   <image>
@@ -37,6 +37,10 @@
     <li>DataScience
     <ul class="org-ul">
       <li><a href="DataScience/thoughts_and_ideas.html">Data Science thoughts &amp; ideas</a></li>
+    </ul></li>
+    <li>Emacs
+    <ul class="org-ul">
+      <li><a href="Emacs/emacs_golf.html">emacs<sub>golf</sub></a></li>
     </ul></li>
     <li>Linux
     <ul class="org-ul">

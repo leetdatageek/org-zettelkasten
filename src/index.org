@@ -7,6 +7,8 @@
   - [[file:Configuration/org-publish.org][org-publish Tips & Tricks]]
 - DataScience
   - [[file:DataScience/thoughts_and_ideas.org][Data Science thoughts & ideas]]
+- Emacs
+  - [[file:Emacs/emacs_golf.org][emacs_golf]]
 - Linux
   - [[file:Linux/configuration.org][Linux Configuration Notes]]
 - Misc
