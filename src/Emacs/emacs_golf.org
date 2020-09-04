@@ -51,8 +51,7 @@ RD 2 Hamilton 3282
 3282
 #+END_EXAMPLE
 
-** Challenge 
-
+** Challenge {{{a(Prepend * to every non-blank line,http://www.vimgolf.com/challenges/5e4dfcccaa2db400090b66c3)}}}
 *** Solution
 Run the macro 6 times since there are six non blank lines after the
 first one.
@@ -103,3 +102,54 @@ surpises.
 *surpises.
 #+END_EXAMPLE
 
+** Challenge {{{a(Satisfy the Go linter,http://www.vimgolf.com/challenges/5f1063aa8361810006e73210)}}}
+*** Solution
+C-M-d to go *down into* the parens, C-n for next line and then M-m to
+place the cursor at the correct indentation point
+
+#+begin_example
+;; Keyboard Macro Editor.  Press C-c C-c to finish; press C-x k RET to cancel.
+;; Original keys: M-@ C-w // SPC C-y SPC TODO RET TAB C-y C-n M-m
+
+Command: last-kbd-macro
+Key: none
+
+Macro:
+
+M-@			;; mark-word
+C-w			;; kill-region
+//			;; self-insert-command * 2
+SPC			;; self-insert-command
+C-y			;; yank
+SPC			;; self-insert-command
+TODO			;; self-insert-command * 4
+RET			;; newline
+TAB			;; indent-for-tab-command
+C-y			;; yank
+C-n			;; next-line
+M-m			;; back-to-indentation
+#+end_example
+
+*** Start File
+
+#+begin_example
+package vars
+
+var (
+        Version string
+        Debug bool
+)
+#+end_example
+
+*** End File
+
+#+begin_example
+package vars
+
+var (
+        // Version TODO
+        Version string
+        // Debug TODO
+        Debug bool
+)
+#+end_example
